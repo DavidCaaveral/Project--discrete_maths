@@ -1,8 +1,27 @@
-print("hola mundo")
-print(1+2)
-if 1 > 2:
-    print("1 es mayor que 2")
-else:
-    print("1 no es mayor que 2")
+# 1. Importaciones de librerías
 
-# Gracias muchachos por tenerme calma 
+
+
+# 2. Definición de constantes globales
+
+
+
+# 3. Definición de funciones
+
+def andLogicGate(a,b) -> int:
+    return a*b
+
+# 4. Definición de clases (opcional)
+
+
+
+
+# 5. Bloque principal de ejecución
+def main():
+    pass
+
+
+# 6. Punto de entrada
+if __name__ == "__main__":
+    main()
+    
