@@ -1,4 +1,7 @@
+import time
 from colorama import init, Fore, Back, Style
+
+
 # Menús principales
 
 statementObj = { # Inicialización de keys de objeto
@@ -9,10 +12,10 @@ statementObj = { # Inicialización de keys de objeto
 }
 
 # Inicializacion de variables
-opcionUsuario=-1
-enMenuPrincipal = False
+userOption=-1
+insideMainMenu = False
     
-while enMenuPrincipal == False:
+while insideMainMenu == False:
     print("\n---------------------------------------MENÚ PRINCIPAL---------------------------------------\n")
     print("A continuación podrá ver las diferentes opciones que tiene para interactuar con el proyecto:\n")
     print("1. Ingresar variables booleanas (A, B, C, D)")
@@ -22,24 +25,28 @@ while enMenuPrincipal == False:
     print("5. Limpiar pantalla")
     print("6. Salir\n")
 
-    opcionUsuario=int(input("Por favor ingrese una opción valida de las mostradas anteriormente "))
+    userOption=int(input("Por favor ingrese una opción valida de las mostradas anteriormente "))
 
     #OPCION 1.
 
-    if opcionUsuario==1:
+    if userOption==1:
         print("\n----------------------------1. Ingreso de variables booleanas (A, B, C, D)----------------------------")
 
-    # Escritura de variables en el objeto
-    for key in statementObj:
-        statementObj[key] = int(input(f"\nIngrese valor para {key} (0 o 1): "))
-        while statementObj[key] != 0 and statementObj[key] != 1:
-                print("Error. Solo se permite 0 o 1.")
-                statementObj[key]= int(input(f"Ingrese valor para {key} (0 o 1): "))
-    
-    break
+    # Ingreso de variables en el objeto por parte del usuario
+        for key in statementObj:
+            statementObj[key] = int(input(f"\nIngrese valor para {key} (0 o 1): "))
+            while statementObj[key] != 0 and statementObj[key] != 1:
+                    print("Error. Solo se permite 0 o 1.")
+                    statementObj[key]= int(input(f"Ingrese valor para {key} (0 o 1): "))
+        break
+
+    #OPCION 2.
+
+    elif userOption==2:
+         print("\n----------------------------2. Mostrar valor actual de las variables----------------------------")
+         print(statementObj)
+
+
     # else:
     #     print("\nEsa opción digitada no esta definida en el menú principal\n")
-    #     enMenuPrincipal == False
-
-
-
+    #     insideMainMenu == False
