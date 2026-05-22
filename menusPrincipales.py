@@ -38,13 +38,13 @@ while insideMainMenu == False:
             while statementObj[key] != 0 and statementObj[key] != 1:
                     print("Error. Solo se permite 0 o 1.")
                     statementObj[key]= int(input(f"Ingrese valor para {key} (0 o 1): "))
+        print("\nEl valor actual de las variables:\n")  
+        print(statementObj)
+        print("")
+
         break
 
     #OPCION 2.
-
-    elif userOption==2:
-         print("\n----------------------------2. Mostrar valor actual de las variables----------------------------")
-         print(statementObj)
 
 
     # else:
