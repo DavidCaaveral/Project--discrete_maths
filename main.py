@@ -1,5 +1,6 @@
 # 1. Importaciones de librerías
 import os
+import time
 from colorama import init, Fore, Back, Style
 
 # 2. Definición de constantes globales
