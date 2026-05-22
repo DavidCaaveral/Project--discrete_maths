@@ -3,9 +3,8 @@ import os
 from colorama import init, Fore, Back, Style
 
 
-
 # 2. Definición de constantes globales
-statementObj = { # Inicialización de variables de objeto
+statementObj = { # Inicialización de keys de objeto
     'A': -1,
     'B': -1,
     'C': -1,
@@ -25,7 +24,10 @@ def notLogicGate(a) -> int:
     return 1 - a
 
 def xorLogicGate(a,b) -> int:
-    return a ^ b
+    notA = notLogicGate(a)
+    notB = notLogicGate(b)
+
+    return orLogicGate(a=(a * notB) ,b=(b * notA))
 
 def ifLogicGate(a) -> int:
     return  (a) - 1 if a > 1 else a 
@@ -45,18 +47,13 @@ def xnorLogicGate(a,b) -> int:
 def clearTerm() -> None:
     os.system('cls' if os.name == 'nt' else 'clear')
 
-
-
-
-
 # 4. Definición de clases (opcional)
-
-
-
 
 # 5. Bloque principal de ejecución
 def main():
-    pass
+    a = 0
+    b = 0
+    print(xorLogicGate(a,b))
 
 # 6. Punto de entrada
 if __name__ == "__main__":
