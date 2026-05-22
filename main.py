@@ -2,7 +2,6 @@
 import os
 from colorama import init, Fore, Back, Style
 
-
 # 2. Definición de constantes globales
 statementObj = { # Inicialización de keys de objeto
     'A': -1,
@@ -10,7 +9,6 @@ statementObj = { # Inicialización de keys de objeto
     'C': -1,
     'D': -1
 }
-
 
 # 3. Definición de funciones
 

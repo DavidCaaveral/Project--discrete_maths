@@ -1,4 +1,12 @@
+from colorama import init, Fore, Back, Style
 # Menús principales
+
+statementObj = { # Inicialización de keys de objeto
+    'A': -1,
+    'B': -1,
+    'C': -1,
+    'D': -1
+}
 
 # Inicializacion de variables
 opcionUsuario=-1
@@ -21,17 +29,12 @@ while enMenuPrincipal == False:
     if opcionUsuario==1:
         print("\n----------------------------1. Ingreso de variables booleanas (A, B, C, D)----------------------------")
 
-       #VARIABLE A 
-    variableA = int(input("\nIngrese valor para A (0 o 1): "))
-    while variableA != 0 and variableA != 1:
-            print("Error. Solo se permite 0 o 1.")
-            variableA = int(input("Ingrese valor para A (0 o 1): "))
-
-        #VARIABLE B
-    variableB = int(input("\nIngrese valor para B (0 o 1): "))
-    while variableB != 0 and variableB != 1:
-            print("Error. Solo se permite 0 o 1.")
-            variableA = int(input("Ingrese valor para B (0 o 1): "))
+    # Escritura de variables en el objeto
+    for key in statementObj:
+        statementObj[key] = int(input(f"\nIngrese valor para {key} (0 o 1): "))
+        while statementObj[key] != 0 and statementObj[key] != 1:
+                print("Error. Solo se permite 0 o 1.")
+                statementObj[key]= int(input(f"Ingrese valor para {key} (0 o 1): "))
     
     break
     # else:
