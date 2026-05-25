@@ -12,18 +12,20 @@ statementObj = { # Inicialización de keys de objeto
 }
 
 # Inicializacion de variables
+
+init() #Inicialización de colorama
 userOption=-1
 insideMainMenu = False
     
 while insideMainMenu == False:
-    print("\n---------------------------------------MENÚ PRINCIPAL---------------------------------------\n")
+    print(f"\n{Fore.CYAN}--------------------------------------->{Style.RESET_ALL}{Fore.GREEN} LOGIC-CRAFT {Style.RESET_ALL}{Fore.CYAN}<---------------------------------------{Style.RESET_ALL}\n")
     print("A continuación podrá ver las diferentes opciones que tiene para interactuar con el proyecto:\n")
-    print("1. Ingresar variables booleanas (A, B, C, D)")
-    print("2. Mostrar valor actual de las variables")
-    print("3. Ir al Submenú 1 (Lector de Compuertas)")
-    print("4. Ir al Submenú 2 (Circuitos Lógicos)")
-    print("5. Limpiar pantalla")
-    print("6. Salir\n")
+    print(f"{Fore.YELLOW}1.{Style.RESET_ALL} Ingresar variables booleanas (A, B, C, D)")
+    print(f"{Fore.YELLOW}2.{Style.RESET_ALL} Mostrar valor actual de las variables")
+    print(f"{Fore.YELLOW}3.{Style.RESET_ALL} Ir al Submenú 1 (Lector de Compuertas)")
+    print(f"{Fore.YELLOW}4.{Style.RESET_ALL} Ir al Submenú 2 (Circuitos Lógicos)")
+    print(f"{Fore.YELLOW}5.{Style.RESET_ALL} {Fore.CYAN}Limpiar pantalla{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW}6.{Style.RESET_ALL} {Fore.RED}Salir{Style.RESET_ALL}\n")
 
     userOption=int(input("Por favor ingrese una opción valida de las mostradas anteriormente "))
 
