@@ -21,7 +21,7 @@ while onSubMenuGates:
     print ("6. compuerta NOR")
     print ("7. compuerta XNOR")
     print ("8. compuerta IF")
-    print ("9. Volver al menú principal\n")
+    print ("9. Volver al menú principal")
     print ("0. limpiar terminal\n")
 
     userOption = int(input("Ingrese una opcion: "))
@@ -59,3 +59,4 @@ while onSubMenuGates:
         clearTerm()
     else:
         print("\nEsa opción digitada no esta definida en el submenu de compuertas lógicas\n")
+
