@@ -52,3 +52,16 @@ elif answersubMenu["submenu"] == "0. limpiar terminal":
     clearTerm()
 else:
     print("\n Esa opción digitada no esta definida en el submenu de compuertas lógicas\n") 
+
+
+optionsubMenu2 = [ 
+    inquirer.List(
+        "submenu2",
+        message="Selecciona la grafica que deseas visualizar",
+        choices=[
+            "Grafica #1",
+            "Grafica #2",
+            "Grafica #3",
+        ]
+    )
+]
