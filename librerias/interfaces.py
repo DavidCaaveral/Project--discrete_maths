@@ -78,17 +78,17 @@ def subMenu1(objVar) -> dict:
     optionsSubMenu = [
         inquirer.List(
             "submenu", 
-            message= (f"\n{Fore.YELLOW}{"►"*12}{Style.RESET_ALL}{Fore.MAGENTA}  COMPUERTAS LÓGICAS {Style.RESET_ALL}{Fore.YELLOW}{"◄"*12}{Style.RESET_ALL}\n"),
+            message= (f"\n{Fore.YELLOW}{"►"*20}{Style.RESET_ALL}{Fore.MAGENTA}  COMPUERTAS LÓGICAS {Style.RESET_ALL}{Fore.YELLOW}{"◄"*20}{Style.RESET_ALL}\n"),
 
             choices=[
-                (f"{Fore.LIGHTYELLOW_EX}►{Style.RESET_ALL}COMPUERTA {Fore.MAGENTA}AND{Style.RESET_ALL}", "AND"),
-                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}COMPUERTA {Fore.MAGENTA}OR{Style.RESET_ALL}", "OR"),
-                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}COMPUERTA {Fore.MAGENTA}NOT{Style.RESET_ALL}", "NOT"),
-                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}COMPUERTA {Fore.MAGENTA}XOR{Style.RESET_ALL}", "XOR"),
-                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}COMPUERTA {Fore.MAGENTA}NAND{Style.RESET_ALL}", "NAND"),
-                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}COMPUERTA {Fore.MAGENTA}NOR{Style.RESET_ALL}", "NOR"),
-                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}COMPUERTA {Fore.MAGENTA}XNOR{Style.RESET_ALL}", "XNOR"),
-                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}COMPUERTA {Fore.MAGENTA}IF{Style.RESET_ALL}", "IF"),
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Compuerta {Fore.MAGENTA}AND{Style.RESET_ALL}", "AND"),
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Compuerta {Fore.MAGENTA}OR{Style.RESET_ALL}", "OR"),
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Compuerta {Fore.MAGENTA}NOT{Style.RESET_ALL}", "NOT"),
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Compuerta {Fore.MAGENTA}XOR{Style.RESET_ALL}", "XOR"),
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Compuerta {Fore.MAGENTA}NAND{Style.RESET_ALL}", "NAND"),
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Compuerta {Fore.MAGENTA}NOR{Style.RESET_ALL}", "NOR"),
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Compuerta {Fore.MAGENTA}XNOR{Style.RESET_ALL}", "XNOR"),
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Compuerta {Fore.MAGENTA}IF{Style.RESET_ALL}", "IF"),
                 (f"{Fore.RED}► VOLVER AL MENÚ PRINCIPAL{Style.RESET_ALL}", "SALIR"),
                 (f"{Fore.GREEN}► LIMPIAR TERMINAL{Style.RESET_ALL}", "LIMPIAR")
                 ]
@@ -101,24 +101,24 @@ subMenu1(statementObj)
 optionsSubMenu2 = [ 
      inquirer.List(
          "submenu2",
-         message=(f"\n{Fore.YELLOW}{"►"*12}{Style.RESET_ALL}{Fore.MAGENTA} SELECCIONE LA GRÁFICA QUE DESEA VISUALIZAR {Style.RESET_ALL}{Fore.YELLOW}{"◄"*12}{Style.RESET_ALL}"),
+         message=(f"\n{Fore.YELLOW}{"►"*20}{Style.RESET_ALL}{Fore.MAGENTA} SELECCIONE LA GRÁFICA QUE DESEA VISUALIZAR {Style.RESET_ALL}{Fore.YELLOW}{"◄"*20}{Style.RESET_ALL}"),
          choices=[
-             (f"{Fore.LIGHTYELLOW_EX}►{Style.RESET_ALL}{Fore.MAGENTA}GRÁFICA #1{Style.RESET_ALL}", "LITERAL1"),
-             (f"{Fore.LIGHTYELLOW_EX}►{Style.RESET_ALL}{Fore.MAGENTA}GRÁFICA #2{Style.RESET_ALL}", "LITERAL2"),
-             (f"{Fore.LIGHTYELLOW_EX}►{Style.RESET_ALL}{Fore.MAGENTA}GRÁFICA #3{Style.RESET_ALL}", "LITERAL3"),
+             (f"{Fore.LIGHTYELLOW_EX}►{Style.RESET_ALL}{Fore.MAGENTA}Gráfica #1{Style.RESET_ALL}", "LITERAL1"),
+             (f"{Fore.LIGHTYELLOW_EX}►{Style.RESET_ALL}{Fore.MAGENTA}Gráfica #2{Style.RESET_ALL}", "LITERAL2"),
+             (f"{Fore.LIGHTYELLOW_EX}►{Style.RESET_ALL}{Fore.MAGENTA}Gráfica #3{Style.RESET_ALL}", "LITERAL3"),
              (f"{Fore.RED}► VOLVER ATRAS{Style.RESET_ALL}", "SALIR")
          ]
      )
  ]
 
 answersubMenu2 = inquirer.prompt(optionsSubMenu2)
-print(f"\n{Fore.YELLOW} {"►"*8} {Fore.MAGENTA}GRAFICAS{Style.RESET_ALL} {Fore.YELLOW} {"◄"*8} {Style.RESET_ALL}\n")
+print(f"\n{Fore.YELLOW} {"►"*20}{Style.RESET_ALL}{Fore.MAGENTA} GRAFICAS {Style.RESET_ALL}{Fore.YELLOW} {"◄"*20}{Style.RESET_ALL}\n")
 print(answersubMenu2["submenu2"])
 print(f"="*66+'\n')
 
-if answersubMenu2["submenu2"] == "►GRÁFICA #1":
-        print ("\n----------------------------GRÁFICA #1----------------------------\n")
-elif answersubMenu2["submenu2"] == "►GRÁFICA #2":
-        print ("\n----------------------------GRÁFICA #2----------------------------\n")
+if answersubMenu2["submenu2"] == "►Gráfica #1":
+        print (f"\n {Fore.YELLOW}{"►"*20}{Style.RESET_ALL}{Fore.MAGENTA} Gráfica#1 {Style.RESET_ALL}{Fore.YELLOW} {"◄"*20}{Style.RESET_ALL} \n")
+elif answersubMenu2["submenu2"] == "►Gráfica #2":
+        print (f"\n{Fore.YELLOW}{"►"*20}{Style.RESET_ALL}{Fore.MAGENTA} Gráfica #2 {Style.RESET_ALL}{Fore.YELLOW} {"◄"*20}{Style.RESET_ALL}\n")
 elif answersubMenu2["submenu2"] == "►GRÁFICA #3":
-        print ("\n----------------------------GRÁFICA #3----------------------------\n")
+        print (f"\n{Fore.YELLOW}{"►"*20}{Style.RESET_ALL}{Fore.MAGENTA} Gráfica #3 {Style.RESET_ALL}{Fore.YELLOW} {"◄"*20}{Style.RESET_ALL}\n")
