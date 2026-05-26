@@ -18,7 +18,7 @@ optionssubMenu = [
             ("6. compuerta NOR", "NOR"),
             ("7. compuerta XNOR", "XNOR"),
             ("8. compuerta IF", "IF"),
-            ("9. Volver al menú principal", "VOLVER"),
+            ("9. Volver al menú principal", "SALIR"),
             ("0. limpiar terminal", "LIMPIAR"),
         ]
     )
@@ -59,13 +59,22 @@ optionssubMenu2 = [
          "submenu2",
          message="Selecciona la grafica que deseas visualizar",
          choices=[
-             ("Grafica #1", "literal1"),
-             ("Grafica #2", "literal2"),
-             ("Grafica #3", "literal3"),
-            
+             ("GRÁFICA #1", "LITERAL1"),
+             ("GRÁFICA #2", "LITERAL2"),
+             ("GRÁFICA #3", "LITERAL3"),
+             ("Volver atras", "SALIR")
          ]
      )
  ]
 
-answersubMenu2 = inquirer.prompt(optionssubMenu2)
+ answersubMenu2 = inquirer.prompt(optionssubMenu2)
 print(f"\n{Fore.YELLOW}{"="*12}{Style.RESET_ALL}{Fore.MAGENTA} > GRAFICAS < {Style.RESET_ALL}{Fore.YELLOW}{"="*12}{Style.RESET_ALL}\n")
+print(answersubMenu2["submenu2"])
+print(f"="*66+'\n')
+
+    if answersubMenu2["submenu2"] == "GRÁFICA #1":
+        print ("\n----------------------------GRÁFICA #1----------------------------\n")
+    elif answersubMenu2["submenu2"] == "GRÁFICA #2":
+        print ("\n----------------------------GRÁFICA #2----------------------------\n")
+    elif answersubMenu2["submenu2"] == "GRÁFICA #3":
+        print ("\n----------------------------GRÁFICA #3----------------------------\n")
