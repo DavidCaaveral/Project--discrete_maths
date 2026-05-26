@@ -6,12 +6,6 @@ from main import clearTerm
 
 init()
 
-statementObj = { # Inicialización de keys de objeto
-    'A': -1,
-    'B': -1,
-    'C': -1,
-    'D': -1
-}
 tituloPrincipal = f"{Fore.GREEN}LOGIC CRAFT{Style.RESET_ALL}"
 
 # while True:

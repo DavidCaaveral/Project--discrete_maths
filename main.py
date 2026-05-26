@@ -21,7 +21,10 @@ def clearTerm() -> None:
 
 # 5. Bloque principal de ejecución
 def main():
-    pass
+    print(xorLogicGateDiagram(1,0,'A','B'))
+    # while True:
+    #    break 
+        
 
 # 6. Punto de entrada
 if __name__ == "__main__":
