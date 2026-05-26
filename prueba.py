@@ -14,10 +14,10 @@ tituloPrincipal = f"{Fore.GREEN}LOGIC CRAFT{Style.RESET_ALL}"
 
 while True:
     pass 
-    print(f"{Fore.YELLOW}={Style.RESET_ALL}"*60)
-    print(tituloPrincipal.center(68))
-    print(f"{Fore.YELLOW}={Style.RESET_ALL}"*60+'\n')
-    print("A continuación podrá ver las diferentes opciones\n que tiene para interactuar con el proyecto\n ")
+    print(f"{Fore.YELLOW}={Style.RESET_ALL}"*67)
+    print(tituloPrincipal.center(76))
+    print(f"{Fore.YELLOW}={Style.RESET_ALL}"*67+'\n')
+    print("A continuación podrá ver las diferentes opciones\nque tiene para interactuar con el proyecto\n ")
     
     optionsMenu = [
         inquirer.List(
@@ -36,7 +36,7 @@ while True:
     answerMenu = inquirer.prompt(optionsMenu)
     
     print(answerMenu["menu"])
-    print(f"="*60+'\n')
+    print(f"="*66+'\n')
     
     if (answerMenu["menu"] == "var-bool"):
         print(f"\n{"="*8}> {Fore.CYAN}1. Ingreso de variables booleanas (A, B, C, D){Style.RESET_ALL} <{"="*8} \n")
@@ -53,4 +53,5 @@ while True:
 
             statementObj[key] = answerObj["valor"]
     print(statementObj)
+    print("")
     break    
