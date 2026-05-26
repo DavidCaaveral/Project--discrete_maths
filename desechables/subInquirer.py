@@ -1,7 +1,7 @@
 import os
 from colorama import init, Fore, Back, Style
 import inquirer
-from main import clearTerm
+from ..main import clearTerm
 
 init()
 optionssubMenu = [
@@ -10,21 +10,21 @@ optionssubMenu = [
         "submenu",
         message="Seleccione una opcion",
         choices=[
-            "1. compuerta AND",
-            "2. compuerta OR",
-            "3. compuerta NOT",
-            "4. compuerta XOR",
-            "5. compuerta NAND",
-            "6. compuerta NOR",
-            "7. compuerta XNOR",
-            "8. compuerta IF",
-            "9. Volver al menú principal",
-            "0. limpiar terminal",
+            ("1. compuerta AND", "AND"),
+            ("2. compuerta OR", "OR"),
+            ("3. compuerta NOT", "NOT"),
+            ("4. compuerta XOR", "XOR"),
+            ("5. compuerta NAND", "NAND"),
+            ("6. compuerta NOR", "NOR"),
+            ("7. compuerta XNOR", "XNOR"),
+            ("8. compuerta IF", "IF"),
+            ("9. Volver al menú principal", "VOLVER"),
+            ("0. limpiar terminal", "LIMPIAR"),
         ]
     )
 ]
 
-answerubMenu = inquirer.prompt(optionssubMenu) 
+answersubMenu = inquirer.prompt(optionssubMenu) 
 print(f"\n{Fore.YELLOW}{"="*12}{Style.RESET_ALL}{Fore.MAGENTA} > COMPUERTAS LÓGICAS < {Style.RESET_ALL}{Fore.YELLOW}{"="*12}{Style.RESET_ALL}\n")
 print(answersubMenu["submenu"])
 print(f"="*66+'\n')
@@ -52,3 +52,20 @@ elif answersubMenu["submenu"] == "0. limpiar terminal":
     clearTerm()
 else:
     print("\n Esa opción digitada no esta definida en el submenu de compuertas lógicas\n") 
+
+
+optionssubMenu2 = [ 
+     inquirer.List(
+         "submenu2",
+         message="Selecciona la grafica que deseas visualizar",
+         choices=[
+             ("Grafica #1", "literal1"),
+             ("Grafica #2", "literal2"),
+             ("Grafica #3", "literal3"),
+            
+         ]
+     )
+ ]
+
+answersubMenu2 = inquirer.prompt(optionssubMenu2)
+print(f"\n{Fore.YELLOW}{"="*12}{Style.RESET_ALL}{Fore.MAGENTA} > GRAFICAS < {Style.RESET_ALL}{Fore.YELLOW}{"="*12}{Style.RESET_ALL}\n")
