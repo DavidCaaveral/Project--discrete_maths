@@ -1,5 +1,8 @@
-#submenus logicgates
 import os
+from colorama import init, Fore, Back, Style
+import inquirer
+
+init()
 def clearTerm() -> None:
     os.system('cls' if os.name == 'nt' else 'clear')
 # Limpiar teminal 
@@ -10,7 +13,7 @@ onSubMenuGates = True
 
 while onSubMenuGates:
 
-    print("\n----------------------------SUBMENU DE COMPUERTAS LÓGICAS----------------------------\n")
+    print(f"\n{Fore.YELLOW}{"="*12}{Style.RESET_ALL}{Fore.MAGENTA} > COMPUERTAS LÓGICAS < {Style.RESET_ALL}{Fore.YELLOW}{"="*12}{Style.RESET_ALL}\n")
     print("En este submenu podrá elegir entre las siguientes compuertas lógicas para evaluar su funcionamiento con las variables booleanas ingresadas en el menú principal\n")
     print ("1. compuerta AND")
     print ("2. compuerta OR")
@@ -25,27 +28,28 @@ while onSubMenuGates:
 
     userOption = int(input("Ingrese una opcion: "))
     if userOption == 1: 
-        print ("\n----------------------------COMPUERTA AND----------------------------\n")
+        print (f"\n{Fore.YELLOW}{"="*12}{Style.RESET_ALL}{Fore.GREEN} COMPUERTA AND {Fore.YELLOW}{"="*12}{Style.RESET_ALL}\n")
     elif userOption == 2:
-        print ("\n----------------------------COMPUERTA OR----------------------------\n")
+        print (f"\n{Fore.YELLOW}{"="*12}{Style.RESET_ALL}{Fore.GREEN} COMPUERTA OR {Fore.YELLOW}{"="*12}{Style.RESET_ALL}\n")
     elif userOption == 3:
-        print ("\n----------------------------COMPUERTA NOT----------------------------\n")
+        print (f"\n{Fore.YELLOW}{"="*12}{Style.RESET_ALL}{Fore.GREEN} COMPUERTA NOT {Fore.YELLOW}{"="*12}{Style.RESET_ALL}\n")
     elif userOption == 4:
-        print ("\n----------------------------COMPUERTA XOR----------------------------\n")
+        print (f"\n{Fore.YELLOW}{"="*12}{Style.RESET_ALL}{Fore.GREEN} COMPUERTA XOR {Fore.YELLOW}{"="*12}{Style.RESET_ALL}\n")
     elif userOption == 5:
-        print ("\n----------------------------COMPUERTA NAND----------------------------\n")
+        print (f"\n{Fore.YELLOW}{"="*12}{Style.RESET_ALL}{Fore.GREEN} COMPUERTA NAND {Fore.YELLOW}{"="*12}{Style.RESET_ALL}\n")
     elif userOption == 6:
-        print ("\n----------------------------COMPUERTA NOR----------------------------\n")
+        print (f"\n{Fore.YELLOW}{"="*12}{Style.RESET_ALL}{Fore.GREEN} COMPUERTA NOR {Fore.YELLOW}{"="*12}{Style.RESET_ALL}\n")
     elif userOption == 7:
-        print ("\n----------------------------COMPUERTA XNOR----------------------------\n")
+        print (f"\n{Fore.YELLOW}{"="*12}{Style.RESET_ALL}{Fore.GREEN} COMPUERTA XNOR {Fore.YELLOW}{"="*12}{Style.RESET_ALL}\n")
     elif userOption == 8:
-        print ("\n----------------------------COMPUERTA IF----------------------------\n")
+        print (f"\n{Fore.YELLOW}{"="*12}{Style.RESET_ALL}{Fore.GREEN} COMPUERTA IF{Fore.YELLOW}{"="*12}{Style.RESET_ALL}\n")
     elif userOption == 9:
-        print ("\nVolviendo al menú principal...\n")
+        print ("\n Volviendo al menú principal...\n")
         onSubMenuGates = True
     elif userOption == 0:
-        print ("\nLimpiando terminal...\n")
+        print ("\n Limpiando terminal...\n")
         clearTerm()
     else:
-        print("\nEsa opción digitada no esta definida en el submenu de compuertas lógicas\n")
+        print("\n Esa opción digitada no esta definida en el submenu de compuertas lógicas\n") 
 
+    break
