@@ -61,7 +61,6 @@ def mainMenu() -> dict:
             message="Seleccione una opción",
             choices=[
                 ("Ingresar variables booleanas (A, B, C, D)", "var-bool"),
-                ("Mostrar valor actual de las variables", "actua-var-bool"),
                 ("Ir al Submenú 1 (Lector de Compuertas)", "submenu1"),
                 ("Ir al Submenú 2 (Circuitos Lógicos)", "submenu2"),
                 ("Limpiar pantalla", "LIMPIAR"),
@@ -79,19 +78,18 @@ def subMenu1(objVar) -> dict:
             "submenu",
             message="Seleccione una opcion",
             choices=[
-                "1. compuerta AND",
-                "2. compuerta OR",
-                "3. compuerta NOT",
-                "4. compuerta XOR",
-                "5. compuerta NAND",
-                "6. compuerta NOR",
-                "7. compuerta XNOR",
-                "8. compuerta IF",
-                "9. Volver al menú principal",
-                "0. limpiar terminal",
+            ("compuerta AND", "AND"),
+            ("compuerta OR", "OR"),
+            ("compuerta NOT", "NOT"),
+            ("compuerta XOR", "XOR"),
+            ("compuerta NAND", "NAND"),
+            ("compuerta NOR", "NOR"),
+            ("compuerta XNOR", "XNOR"),
+            ("compuerta IF", "IF"),
+            ("Volver al menú principal", "VOLVER"),
+            ("limpiar terminal", "LIMPIAR")
                 ]
             )
     ]
     return inquirer.prompt(optionsSubMenu) 
     
-subMenu1(statementObj)

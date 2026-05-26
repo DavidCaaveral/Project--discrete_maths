@@ -19,7 +19,7 @@ optionssubMenu = [
             ("7. compuerta XNOR", "XNOR"),
             ("8. compuerta IF", "IF"),
             ("9. Volver al menú principal", "VOLVER"),
-            ("0. limpiar terminal", "LIMPIAR"),
+            ("0. limpiar terminal", "LIMPIAR")
         ]
     )
 ]
