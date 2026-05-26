@@ -1,13 +1,9 @@
 import os
 from colorama import init, Fore, Back, Style
 import inquirer
-#submenus logicgates
-def clearTerm() -> None:
-    os.system('cls' if os.name == 'nt' else 'clear')
+from main import clearTerm
 
 init()
-
-
 
 optionssubMenu = [
     inquirer.List(
@@ -23,7 +19,7 @@ optionssubMenu = [
             "7. compuerta XNOR",
             "8. compuerta IF",
             "9. Volver al menú principal",
-            "0. limpiar terminal"
+            "0. limpiar terminal",
         ]
     )
 ]

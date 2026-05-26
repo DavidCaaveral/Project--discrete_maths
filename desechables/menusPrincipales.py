@@ -12,14 +12,6 @@ statementObj = { # Inicialización de keys de objeto
 }
 
 # Inicializacion de variables
-<<<<<<< HEAD
-opcionUsuario=-1
-enMenuPrincipal = False
-    
-while enMenuPrincipal == False:
-    print("\n---------------------------------------MENÚ PRINCIPAL---------------------------------------\n")
-=======
->>>>>>> 6878c75da9bdb8bbf801dbadbfb079ea43d2a111
 
 init() #Inicialización de colorama
 userOption=-1
@@ -54,13 +46,4 @@ while insideMainMenu == False:
 
         break
 
-<<<<<<< HEAD
-    #OPCION 2.
-
-
-    # else:
-    #     print("\nEsa opción digitada no esta definida en el menú principal\n")
-    #     insideMainMenu == False
-=======
     
->>>>>>> ee3969e7ba812ff2ea8eac735a6b26d166591c4a

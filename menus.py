@@ -25,11 +25,11 @@ while True:
             message="Seleccione una opcion",
             choices=[
                 ("Ingresar variables booleanas (A, B, C, D)", "var-bool"),
-                ("Mostrar valor actual de las variables","actua-var-bool"),
-                ("Ir al Submenú 1 (Lector de Compuertas)","submenu1"),
-                ("Ir al Submenú 2 (Circuitos Lógicos)","submenu2"),
-                ("Limpiar pantalla","LIMPIAR"),
-                ("Salir","SALIR")
+                ("Mostrar valor actual de las variables", "actua-var-bool"),
+                ("Ir al Submenú 1 (Lector de Compuertas)", "submenu1"),
+                ("Ir al Submenú 2 (Circuitos Lógicos)", "submenu2"),
+                ("Limpiar pantalla", "LIMPIAR"),
+                ("Salir", "SALIR")
             ]
         )
     ]
