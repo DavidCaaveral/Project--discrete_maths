@@ -21,11 +21,7 @@ def clearTerm() -> None:
 
 # 5. Bloque principal de ejecución
 def main():
-    a = 1
-    b = 0
-    print(andLogicGate(a,b))
-    print(xNorLogicGateDiagram(a,b,'A','B'))
-    print(ifLogicGateDiagram(a,'A'))
+    pass
 
 # 6. Punto de entrada
 if __name__ == "__main__":

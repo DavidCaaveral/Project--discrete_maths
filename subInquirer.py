@@ -4,8 +4,8 @@ import inquirer
 from main import clearTerm
 
 init()
-
 optionssubMenu = [
+
     inquirer.List(
         "submenu",
         message="Seleccione una opcion",
@@ -24,8 +24,8 @@ optionssubMenu = [
     )
 ]
 
+answerubMenu = inquirer.prompt(optionssubMenu) 
 print(f"\n{Fore.YELLOW}{"="*12}{Style.RESET_ALL}{Fore.MAGENTA} > COMPUERTAS LÓGICAS < {Style.RESET_ALL}{Fore.YELLOW}{"="*12}{Style.RESET_ALL}\n")
-answersubMenu = inquirer.prompt(optionssubMenu) 
 print(answersubMenu["submenu"])
 print(f"="*66+'\n')
 
