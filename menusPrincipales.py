@@ -1,7 +1,10 @@
+import time
 from colorama import init, Fore, Back, Style
+
+
 # Menús principales
 
-statementObj = { # Inicialización de keys de objeto  Diccionario
+statementObj = { # Inicialización de keys de objeto
     'A': -1,
     'B': -1,
     'C': -1,
@@ -24,11 +27,11 @@ while insideMainMenu == False:
     print(f"{Fore.YELLOW}5.{Style.RESET_ALL} {Fore.CYAN}Limpiar pantalla{Style.RESET_ALL}")
     print(f"{Fore.YELLOW}6.{Style.RESET_ALL} {Fore.RED}Salir{Style.RESET_ALL}\n")
 
-    opcionUsuario=int(input("Por favor ingrese una opción valida de las mostradas anteriormente "))
+    userOption=int(input("Por favor ingrese una opción valida de las mostradas anteriormente "))
 
     #OPCION 1.
 
-    if opcionUsuario==1:
+    if userOption==1:
         print("\n----------------------------1. Ingreso de variables booleanas (A, B, C, D)----------------------------")
 
     # Ingreso de variables en el objeto por parte del usuario
@@ -43,9 +46,13 @@ while insideMainMenu == False:
 
         break
 
+<<<<<<< HEAD
     #OPCION 2.
 
 
     # else:
     #     print("\nEsa opción digitada no esta definida en el menú principal\n")
     #     insideMainMenu == False
+=======
+    
+>>>>>>> ee3969e7ba812ff2ea8eac735a6b26d166591c4a
