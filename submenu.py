@@ -1,4 +1,5 @@
 #submenus logicgates
+import os
 def clearTerm() -> None:
     os.system('cls' if os.name == 'nt' else 'clear')
 # Limpiar teminal 
@@ -46,9 +47,5 @@ while onSubMenuGates:
         print ("\nLimpiando terminal...\n")
         clearTerm()
     else:
-<<<<<<< HEAD
-        print("\nEsa opción digitada no esta definida en el submenu de compuertas lógicas\n") 
-=======
         print("\nEsa opción digitada no esta definida en el submenu de compuertas lógicas\n")
 
->>>>>>> b7ba7d4b4695bbb00233b1d0915e30ef30180456
