@@ -4,7 +4,8 @@ import time
 from colorama import init, Fore, Back, Style
 from librerias.compuertas import *
 from librerias.interfaces import *
-from util import *
+from librerias.util import *
+from librerias.circuitos import *
 
 # 2. Definición de constantes globales
 
@@ -14,6 +15,7 @@ from util import *
 
 # 5. Bloque principal de ejecución
 def main():
+    
     while True:
         electedOption = mainMenu()["menu"]
         match electedOption:
@@ -132,7 +134,54 @@ def main():
                             print(f"{submenuOption1} {varAS1} → {localIf}".center(60))
                             print(f">DIAGRAMA:")
                             print(ifLogicGateDiagram(valueAS1,varAS1))      
-                           
+            case "submenu2":
+                
+                if not booleanValidation(statementObj):
+                    continue
+                
+                print(f"="*66+'\n')
+                print(f"\n{"="*21}> {Fore.CYAN} Circuitos Booleanos {Style.RESET_ALL} <{"="*21} \n \n")
+                
+                Flag = True
+                while Flag:
+                    listVarElectedS2 = []
+                    submenuOptionS2 = subMenu2(statementObj)["submenu2"]
+                    definedRangeS2 = 3 if submenuOptionS2 == "LITERAL2"  else 4 #un operador ternario que asigna un valor u otro   
+                    
+                    if submenuOption1 == "SALIR":
+                        break
+
+                    if submenuOption1 == "LIMPIAR":
+                        clearTerm()
+                        continue
+                    
+                    for i in range(definedRangeS2):
+                        questionVarS2 = [
+                            inquirer.List(
+                                "varS2",
+                                message=f"Ingrese las variables que desee utilizar {"=="*5} {showActualVar()}",
+                                choices=['A','B','C','D']
+                            )
+                        ]
+                        answerVarS2 = inquirer.prompt(questionVarS2)
+                        listVarElectedS2.append(answerVarS2['varS2'])  
+                        
+                    varAS2 = listVarElectedS2[0]
+                    varBS2 = listVarElectedS2[1]
+                    varCS2 = listVarElectedS2[2]
+                    varDS2 = listVarElectedS2[3] if len(listVarElectedS2) > 3 else "" 
+                    valueAS2 = statementObj[listVarElectedS2[0]]   
+                    valueBS2 = statementObj[listVarElectedS2[1]]   
+                    valueCS2 = statementObj[listVarElectedS2[2]]
+                    valueDS2 = statementObj[listVarElectedS2[3]] if len(listVarElectedS2) > 3 else -1 
+                    
+                    match subMenu2:
+                        case "LITERAL1":
+                            print("="*12)
+                            print("> Punto1 <")
+                            print("="*12,"\n ")
+                            print(f">DIAGRAMA:\n") 
+                            print(firstCircuitDiagram(valueAS2,valueBS2,valueCS2,valueDS2,varAS2,varBS2,varCS2,varDS2)) 
 
 # 6. Punto de entrada
 if __name__ == "__main__":

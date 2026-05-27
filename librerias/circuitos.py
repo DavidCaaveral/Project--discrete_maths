@@ -1,4 +1,7 @@
-from compuertas import *
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from librerias.compuertas import *
 
 def secondCircuitDiagram(a,b,c,keyA,keyB,keyC) -> str:
     firstLocalAnd = andLogicGate(a,b)
@@ -78,5 +81,3 @@ def thirdCircuitDiagram(a,b,c,d,keyA,keyB,keyC,keyD) -> str:
 
 
 """
-
-print(thirdCircuitDiagram(1,0,1,0,'A','B','C','D'))
