@@ -51,7 +51,7 @@ def main():
                 while Flag:
                     listVarElected = []
                     submenuOption1= subMenu1(statementObj)["submenu"]
-                    definedRange = 1 if submenuOption1 == "NOT" or submenuOption1 == "IF" else 2
+                    definedRange = 1 if submenuOption1 == "NOT" or submenuOption1 == "IF" else 2 #un operador ternario que asigna un valor u otro 
                     
                     if submenuOption1 == "SALIR":
                         break
@@ -79,56 +79,56 @@ def main():
                         case "AND":
                             localAnd = andLogicGate(valueAS1,valueBS1)
                             showActualGate(submenuOption1)
-                            print(f">OPERACION:")
+                            print(f">OPERACIÓN:")
                             showgates(varAS1,varBS1,localAnd,submenuOption1)
                             print(f">DIAGRAMA:")
                             print(andLogicGateDiagram(valueAS1,valueBS1,varAS1,varBS1))
                         case "OR":
                             localOr = orLogicGate(valueAS1,valueBS1)
                             showActualGate(submenuOption1)
-                            print(f">OPERACION:")
+                            print(f">OPERACIÓN:")
                             showgates(varAS1,varBS1,localOr,submenuOption1)
                             print(f">DIAGRAMA:")
                             print(orLogicGateDiagram(valueAS1,valueBS1,varAS1,varBS1))  
                         case "NOT":
                             localNot = notLogicGate(valueAS1)
                             showActualGate(submenuOption1)
-                            print(f">OPERACION:")
+                            print(f">OPERACIÓN:")
                             print(f"{submenuOption1} {varAS1} → {localNot}".center(60))
                             print(f">DIAGRAMA:")
                             print(notLogicGateDiagram(valueAS1,varAS1))  
                         case "XOR":
                             localXor = xorLogicGate(valueAS1,valueBS1)
                             showActualGate(submenuOption1)
-                            print(f">OPERACION:")
+                            print(f">OPERACIÓN:")
                             showgates(varAS1,varBS1,localXor,submenuOption1)
                             print(f">DIAGRAMA:")
                             print(xorLogicGateDiagram(valueAS1,valueBS1,varAS1,varBS1))     
                         case "NAND":
                             localNAnd = nAndLogicGate(valueAS1,valueBS1)
                             showActualGate(submenuOption1)
-                            print(f">OPERACION:")
+                            print(f">OPERACIÓN:")
                             showgates(varAS1,varBS1,localNAnd,submenuOption1)
                             print(f">DIAGRAMA:")
                             print(nAndLogicGateDiagram(valueAS1,valueBS1,varAS1,varBS1))  
                         case "NOR":
                             localNOr = nOrLogicGate(valueAS1,valueBS1)
                             showActualGate(submenuOption1)
-                            print(f">OPERACION:")
+                            print(f">OPERACIÓN:")
                             showgates(varAS1,varBS1,localNOr,submenuOption1)
                             print(f">DIAGRAMA:")
                             print(nOrLogicGateDiagram(valueAS1,valueBS1,varAS1,varBS1))  
                         case "XNOR":
                             localXNOr = xNorLogicGate(valueAS1,valueBS1)
                             showActualGate(submenuOption1)
-                            print(f">OPERACION:")
+                            print(f">OPERACIÓN:")
                             showgates(varAS1,varBS1,localXNOr,submenuOption1)
                             print(f">DIAGRAMA:")
                             print(xNorLogicGateDiagram(valueAS1,valueBS1,varAS1,varBS1))    
                         case "IF":
                             localIf = ifLogicGate(valueAS1)
                             showActualGate(submenuOption1)
-                            print(f">OPERACION:")
+                            print(f">OPERACIÓN:")
                             print(f"{submenuOption1} {varAS1} → {localIf}".center(60))
                             print(f">DIAGRAMA:")
                             print(ifLogicGateDiagram(valueAS1,varAS1))      

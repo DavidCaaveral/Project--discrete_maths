@@ -62,6 +62,8 @@ print("\nFigura 3\n")
 print("[ A -> (B <-> C) ] xor (B ^ D)")
 print("Expresion reescrita usando equivalencias booleanas:")
 print("[ A' + (B xor C)'] xor (B x D)")
+print("Expresion reescrita usando equivalencias de algebras booleanas:")
+print("({ A' + [(B x C') + (B' x C)]'} x (B x D)') + ({ A' + [(B x C') + (B' x C)]'}' x (B x D))")
 print("""
                              
             |\\            
