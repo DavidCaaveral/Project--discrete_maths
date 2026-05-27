@@ -53,7 +53,7 @@ def main():
                     submenuOption1= subMenu1(statementObj)["submenu"]
                     definedRange = 1 if submenuOption1 == "NOT" or submenuOption1 == "IF" else 2
                     
-                    if submenuOption1 == "VOLVER":
+                    if submenuOption1 == "SALIR":
                         break
 
                     if submenuOption1 == "LIMPIAR":
