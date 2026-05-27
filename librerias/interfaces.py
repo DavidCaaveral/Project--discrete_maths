@@ -1,56 +1,17 @@
 import re
 from colorama import init, Fore, Back, Style
 import inquirer
-from main import statementObj
-from main import clearTerm
+from util import *
 
 init()
 
-tituloPrincipal = f"{Fore.GREEN}LOGIC CRAFT{Style.RESET_ALL}"
+def showActualGate(answerS1) -> None:
+    print("="*60)
+    print(f"Compuerta {answerS1}".center(60))
+    print("="*60,"\n ")
 
-# while True:
-#     pass 
-#     print(f"{Fore.YELLOW}={Style.RESET_ALL}"*67)
-#     print(tituloPrincipal.center(76))
-#     print(f"{Fore.YELLOW}={Style.RESET_ALL}"*67+'\n')
-#     print("A continuación podrá ver las diferentes opciones\nque tiene para interactuar con el proyecto\n ")
-    
-#     optionsMenu = [
-#         inquirer.List(
-#             "menu",
-#             message="Seleccione una opción",
-#             choices=[
-#                 ("Ingresar variables booleanas (A, B, C, D)", "var-bool"),
-#                 ("Mostrar valor actual de las variables", "actua-var-bool"),
-#                 ("Ir al Submenú 1 (Lector de Compuertas)", "submenu1"),
-#                 ("Ir al Submenú 2 (Circuitos Lógicos)", "submenu2"),
-#                 ("Limpiar pantalla", "LIMPIAR"),
-#                 ("Salir", "SALIR")
-#             ]
-#         )
-#     ]
-#     answerMenu = inquirer.prompt(optionsMenu)
-    
-#     print(answerMenu["menu"])
-#     print(f"="*66+'\n')
-    
-#     if (answerMenu["menu"] == "var-bool"):
-#         print(f"\n{"="*8}> {Fore.CYAN}1. Ingreso de variables booleanas (A, B, C, D){Style.RESET_ALL} <{"="*8} \n")
-#         for key in statementObj:
-#             questionBool = [
-#                 inquirer.List(
-#                     "valor",
-#                     message=f"Ingrese valor para {key}",
-#                     choices=[0, 1]
-#                 )
-#             ]
-
-#             answerObj = inquirer.prompt(questionBool)
-
-#             statementObj[key] = answerObj["valor"]
-#     print(statementObj)
-#     print("")
-#     break    
+def showActualVar() -> str:
+    return f"> Variables booleanas: A:{statementObj['A']}, B:{statementObj['B']}, C:{statementObj['C']}, D:{statementObj['D']}"    
 
 def mainMenu() -> dict:
     print("A continuación podrá ver las diferentes opciones\nque tiene para interactuar con el proyecto\n ")
@@ -72,7 +33,7 @@ def mainMenu() -> dict:
 
 def subMenu1(objVar) -> dict:
     
-    print(" "*30, f"> Variables booleanas: A:{statementObj['A']}, B:{statementObj['B']}, C:{statementObj['C']}, D:{statementObj['D']}")
+    print(" "*30, showActualVar())
     optionsSubMenu = [
         inquirer.List(
             "submenu",
@@ -92,4 +53,4 @@ def subMenu1(objVar) -> dict:
             )
     ]
     return inquirer.prompt(optionsSubMenu) 
-    
+   

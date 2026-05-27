@@ -111,7 +111,9 @@ def xNorLogicGateDiagram(a,b,keyA,keyB) -> str:
     return f"""
               _____
 {keyA}: {a} --------\\\\     \\
-              ))XNOR )o--- SALIDA ESPERADA
+              ))XNOR )o--- F: {localXNor}
 {keyB}: {b} --------//_____/
 """
 # 
+def showgates(a,b,result,gate) -> None:
+    print(f"{a} {gate} {b} → {result}".center(60))
