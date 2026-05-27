@@ -63,19 +63,28 @@ def subMenu1(objVar) -> dict:
     return inquirer.prompt(optionsSubMenu) 
     
 
+def subMenu2(objVar) -> dict:
+    print(" "*30, showActualVar())
+    optionsSubMenu2 = [
+        inquirer.List(
+            "submenu2",
+            message= f"Seleccione una opcion: ",
+            choices=[
+                (f"{Fore.LIGHTYELLOW_EX}►{Style.RESET_ALL}{Fore.MAGENTA}Gráfica #1{Style.RESET_ALL}", "LITERAL1"),
+                (f"{Fore.LIGHTYELLOW_EX}►{Style.RESET_ALL}{Fore.MAGENTA}Gráfica #2{Style.RESET_ALL}", "LITERAL2"),
+                (f"{Fore.LIGHTYELLOW_EX}►{Style.RESET_ALL}{Fore.MAGENTA}Gráfica #3{Style.RESET_ALL}", "LITERAL3"),
+                (f"{Fore.RED}► VOLVER ATRAS{Style.RESET_ALL}", "SALIR")
+            ]
+        )
+    ]
+    return inquirer.prompt(optionsSubMenu2)
 
-# optionsSubMenu2 = [ 
-#      inquirer.List(
-#          "submenu2",
-#          message=(f"\n{Fore.YELLOW}{"►"*20}{Style.RESET_ALL}{Fore.MAGENTA} SELECCIONE LA GRÁFICA QUE DESEA VISUALIZAR {Style.RESET_ALL}{Fore.YELLOW}{"◄"*20}{Style.RESET_ALL}"),
-#          choices=[
-#              (f"{Fore.LIGHTYELLOW_EX}►{Style.RESET_ALL}{Fore.MAGENTA}Gráfica #1{Style.RESET_ALL}", "LITERAL1"),
-#              (f"{Fore.LIGHTYELLOW_EX}►{Style.RESET_ALL}{Fore.MAGENTA}Gráfica #2{Style.RESET_ALL}", "LITERAL2"),
-#              (f"{Fore.LIGHTYELLOW_EX}►{Style.RESET_ALL}{Fore.MAGENTA}Gráfica #3{Style.RESET_ALL}", "LITERAL3"),
-#              (f"{Fore.RED}► VOLVER ATRAS{Style.RESET_ALL}", "SALIR")
-#          ]
-#      )
-#  ]
+# answersubMenu2 =subMenu2(statementObj)
+# print (f"\n{Fore.YELLOW} {"►"*20}{Style.RESET_ALL}{Fore.MAGENTA} GRAFICAS {Style.RESET_ALL}{Fore.YELLOW} {"◄"*20}{Style.RESET_ALL}\n")
+# print(answersubMenu2["submenu2"])
+# print (f"►"*66+'\n')
+
+
 
 # answersubMenu2 = inquirer.prompt(optionsSubMenu2)
 # print(f"\n{Fore.YELLOW} {"►"*20}{Style.RESET_ALL}{Fore.MAGENTA} GRAFICAS {Style.RESET_ALL}{Fore.YELLOW} {"◄"*20}{Style.RESET_ALL}\n")
