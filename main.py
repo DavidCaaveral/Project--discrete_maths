@@ -18,6 +18,14 @@ def main():
     
     while True:
         electedOption = mainMenu()["menu"]
+        
+        if electedOption == "SALIR":
+                    break
+
+        if electedOption == "LIMPIAR":
+                    clearTerm()
+                    continue
+                
         match electedOption:
             
             case "var-bool":
@@ -134,13 +142,14 @@ def main():
                             print(f"{submenuOption1} {varAS1} → {localIf}".center(60))
                             print(f">DIAGRAMA:")
                             print(ifLogicGateDiagram(valueAS1,varAS1))      
+           
             case "submenu2":
                 
                 if not booleanValidation(statementObj):
                     continue
                 
                 print(f"="*66+'\n')
-                print(f"\n{"="*21}> {Fore.CYAN} Circuitos Booleanos {Style.RESET_ALL} <{"="*21} \n \n")
+                print(f"\n{"="*21}> {Fore.CYAN} Circuitos Logicos {Style.RESET_ALL} <{"="*21} \n \n")
                 
                 Flag = True
                 while Flag:
@@ -148,10 +157,10 @@ def main():
                     submenuOptionS2 = subMenu2(statementObj)["submenu2"]
                     definedRangeS2 = 3 if submenuOptionS2 == "LITERAL2"  else 4 #un operador ternario que asigna un valor u otro   
                     
-                    if submenuOption1 == "SALIR":
+                    if submenuOptionS2 == "SALIR":
                         break
 
-                    if submenuOption1 == "LIMPIAR":
+                    if submenuOptionS2 == "LIMPIAR":
                         clearTerm()
                         continue
                     
@@ -175,14 +184,29 @@ def main():
                     valueCS2 = statementObj[listVarElectedS2[2]]
                     valueDS2 = statementObj[listVarElectedS2[3]] if len(listVarElectedS2) > 3 else -1 
                     
-                    match subMenu2:
+                    match submenuOptionS2:
                         case "LITERAL1":
-                            print("="*12)
-                            print("> Punto1 <")
-                            print("="*12,"\n ")
+                            print("="*60)
+                            print("> Punto 1 <".center(60))
+                            print("="*60,"\n ")
                             print(f">DIAGRAMA:\n") 
                             print(firstCircuitDiagram(valueAS2,valueBS2,valueCS2,valueDS2,varAS2,varBS2,varCS2,varDS2)) 
+                        case "LITERAL2":
+                            print("="*60)
+                            print("> Punto 2 <".center(60))
+                            print("="*60,"\n ")
+                            print(f">DIAGRAMA:\n") 
+                            print(secondCircuitDiagram(valueAS2,valueBS2,valueCS2,varAS2,varBS2,varCS2)) 
+                        case "LITERAL3":
+                            print("="*60)
+                            print("> Punto 3 <".center(60))
+                            print("="*60,"\n ")
+                            print(f">DIAGRAMA:\n") 
+                            print(thirdCircuitDiagram(valueAS2,valueBS2,valueCS2,valueDS2,varAS2,varBS2,varCS2,varDS2)) 
 
+    print("="*60)
+    print("HASTA PRONTO".center(60))
+    print("="*60)
 # 6. Punto de entrada
 if __name__ == "__main__":
     main()

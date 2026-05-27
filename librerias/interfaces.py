@@ -67,11 +67,11 @@ def subMenu2(objVar) -> dict:
     optionsSubMenu2 = [
         inquirer.List(
             "submenu2",
-            message= f"Seleccione una opcion: ",
+            message= f"Seleccione una opción",
             choices=[
-                (f"{Fore.LIGHTYELLOW_EX}►{Style.RESET_ALL}{Fore.MAGENTA}Gráfica #1{Style.RESET_ALL}", "LITERAL1"),
-                (f"{Fore.LIGHTYELLOW_EX}►{Style.RESET_ALL}{Fore.MAGENTA}Gráfica #2{Style.RESET_ALL}", "LITERAL2"),
-                (f"{Fore.LIGHTYELLOW_EX}►{Style.RESET_ALL}{Fore.MAGENTA}Gráfica #3{Style.RESET_ALL}", "LITERAL3"),
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}{Fore.MAGENTA}Gráfica #1{Style.RESET_ALL}", "LITERAL1"),
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}{Fore.MAGENTA}Gráfica #2{Style.RESET_ALL}", "LITERAL2"),
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}{Fore.MAGENTA}Gráfica #3{Style.RESET_ALL}", "LITERAL3"),
                 (f"{Fore.RED}► VOLVER AL MENÚ PRINCIPAL{Style.RESET_ALL}", "SALIR"),
                 (f"{Fore.GREEN}► LIMPIAR TERMINAL{Style.RESET_ALL}", "LIMPIAR")
             ]
