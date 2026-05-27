@@ -15,10 +15,14 @@ def showActualGate(answerS1) -> None:
     print("="*60,"\n ")
 
 def showActualVar() -> str:
-    return f"> Variables booleanas: A:{statementObj['A']}, B:{statementObj['B']}, C:{statementObj['C']}, D:{statementObj['D']}"    
+    booleanVarMessage = f"> Variables booleanas: A:{statementObj['A']}, B:{statementObj['B']}, C:{statementObj['C']}, D:{statementObj['D']}"
+    if statementObj['A'] == -1:
+        booleanVarMessage = f"> Variables booleanas: A:{None}, B:{None}, C:{None}, D:{None}" 
+    return f"{Back.GREEN}{booleanVarMessage}{Style.RESET_ALL}"
 
 def mainMenu() -> dict:
-    print("A continuación podrá ver las diferentes opciones\nque tiene para interactuar con el proyecto\n ")
+    print(" "*60, showActualVar())
+    print("\nA continuación podrá ver las diferentes opciones\nque tiene para interactuar con el proyecto\n ")
     
     optionsMenu = [
         inquirer.List(
@@ -36,12 +40,11 @@ def mainMenu() -> dict:
     return inquirer.prompt(optionsMenu)
 
 def subMenu1(objVar) -> dict:
-    
-    print(" "*30, showActualVar())
+    print(" "*60, showActualVar())
     optionsSubMenu = [
         inquirer.List(
             "submenu", 
-            message= f"Seleccione una opcion: ",
+            message= f"Seleccione una opción",
 
             choices=[
                 (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Compuerta {Fore.MAGENTA}AND{Style.RESET_ALL}", "AND"),
