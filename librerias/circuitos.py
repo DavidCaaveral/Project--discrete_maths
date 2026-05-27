@@ -18,4 +18,4 @@ def secondCircuitDiagram(a,b,c,keyA,keyB,keyC) -> str:
 {keyC}: {c} -----------------|______/
 """
 
-print(secondCircuitDiagram(1,0,1,'A','B','C'))
+print(secondCircuitDiagram(0,0,0,'A','B','C'))
