@@ -51,7 +51,7 @@ def main():
                 while Flag:
                     listVarElected = []
                     submenuOption1= subMenu1(statementObj)["submenu"]
-                    definedRange = 1 if submenuOption1 == "NOT" or submenuOption1 == "IF" else 2
+                    definedRange = 1 if submenuOption1 == "NOT" or submenuOption1 == "IF" else 2 #un operador ternario que asigna un valor u otro 
                     
                     if submenuOption1 == "SALIR":
                         break

@@ -1,6 +1,6 @@
 from compuertas import *
 
-def secondDiagram(a,b,c,keyA,keyB,keyC) -> str:
+def secondCircuitDiagram(a,b,c,keyA,keyB,keyC) -> str:
     firstLocalAnd = andLogicGate(a,b)
     secondLocalAnd = andLogicGate(a,c)
     unicLocalOr = orLogicGate(firstLocalAnd,secondLocalAnd)
@@ -18,4 +18,4 @@ def secondDiagram(a,b,c,keyA,keyB,keyC) -> str:
 {keyC}: {c} -----------------|______/
 """
 
-print(secondDiagram(1,0,1,'A','B','C'))
+print(secondCircuitDiagram(1,0,1,'A','B','C'))
