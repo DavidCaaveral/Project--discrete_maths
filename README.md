@@ -19,3 +19,5 @@ esto instalara las librerias
 - `inquirer` → que permite hacer menus interactivos en la terminal
 
 posteriormente se debe ejecutar desde le archivo ***main*** dandole a `f5` o al compilador del editor de codigo respectivo.
+
+> # SE RECOMIENDA CORRER EL PROGRAMA EN TERMINAL DE PANTALLA COMPLETA
