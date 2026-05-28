@@ -22,21 +22,26 @@ def main():
 
     while True:
     
-        electedOption = mainMenu()["menu"]
+        electedOption = mainMenu()["menu"] # llamada al diccioanrio que retorna el la funcion mainMenu que usa inquirer
         
+        # función para salir
         if electedOption == "SALIR":
                     break
-
+        # función para limpiar la terminal 
         if electedOption == "LIMPIAR":
                     clearTerm()
                     continue
-                
+        
+        # switch utilizado       
         match electedOption:
-            
+            # en caso de elegir el ingreso de las variables booleanas
             case "var-bool":
                 print(f"="*66+'\n')
-                print(f"\n{"="*14}> {Fore.CYAN} Ingreso de variables booleanas {Style.RESET_ALL} <{"="*16} \n")
+                print(f"\n{"="*8}> {Fore.CYAN} Ingreso de variables booleanas {Style.RESET_ALL} <{"="*8} \n")
+                
+                #itera sobre el diccionario de variables para llenar todas sus keys
                 for key in statementObj:
+                    # uso de inquirer para menu de 0 o 1
                     questionBool = [
                         inquirer.List(
                             "value",
@@ -53,7 +58,7 @@ def main():
                 print(f"\nVariables asignadas con exito {" - -"*5} A:{statementObj['A']}, B:{statementObj['B']}, C:{statementObj['C']}, D:{statementObj['D']}\n \n")
                 print("Redirigiendo...".center(76), "\n")
                 time.sleep(2)
-                
+            # en caso de elegir el lector de compuertas    
             case "submenu1":
                 
                 if not booleanValidation(statementObj):
@@ -208,7 +213,6 @@ def main():
                             print("="*60, "\n")
                             print(f"{Fore.CYAN}\n► SIMPLIFICACIÓN:\n{Style.RESET_ALL}")
                             print(simplificationExpresionLit1())
-                            print("="*60, "\n")
                         case "LITERAL2":
                             print("="*60)
                             print(F"{Fore.CYAN}► Punto 2 <{Style.RESET_ALL}".center(60))
@@ -221,7 +225,6 @@ def main():
                             print("="*60, "\n")
                             print(f"{Fore.CYAN}\n► SIMPLIFICACIÓN:\n{Style.RESET_ALL}")
                             print(simplificationExpresionLit2())
-                            print("="*60, "\n")
                             
                         case "LITERAL3":
                             print("="*60)
@@ -241,7 +244,6 @@ def main():
                             print("="*60, "\n")
                             print(f"{Fore.CYAN}\n► SIMPLIFICACIÓN:\n{Style.RESET_ALL}")
                             print(simplificationExpresionLit3())
-                            print("="*60, "\n")
 
     print(f"{Fore.YELLOW}={Style.RESET_ALL}"*60)
     print(f"{Style.BRIGHT}HASTA PRONTO{Style.RESET_ALL}".center(65))
