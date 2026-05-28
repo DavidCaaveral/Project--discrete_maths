@@ -82,10 +82,10 @@ def thirdCircuitDiagram(a,b,c,d,keyA,keyB,keyC,keyD) -> str:
 
 """
 
-def originalExpresionLit1() -> str:
+def originalExpresionLit2() -> str:
    return "Z = [(A x B) + (A x C)]"
 
-def simplificationExpresionLit1() -> str: 
+def simplificationExpresionLit2() -> str: 
     return """
 Simplificación de la expresion a través de leyes booleanas:
       
@@ -94,10 +94,10 @@ Z =   A x (B x C)            → Distributiva inversa / Factor común
 Z =   A x (B x C)            → Expresión simplificada
 """
 
-def originalExpresionLit2() -> str:
+def originalExpresionLit1() -> str:
     return " F = {[((A x B) + B) xor (A x C)'] + D'}' "
 
-def tramsformationExpresionLit2() -> str:
+def tramsformationExpresionLit1() -> str:
     return """
 Reescritura de la expresion con operadores logicos a expresion con operaciones booleanas
 
@@ -105,9 +105,10 @@ F = {[((A x B) + B) xor (A x C)'] + D'}'     →     Expresión original  con op
 F = {[((AB)+B)((AC)')'+((AB)+B)'(AC)']+D'}'  →     Expandir termino xor
 F = {[((AB)+B)((AC)')'+((AB)+B)'(AC)']+D'}'  →     Expresión reescrita con operaciones booleanas basicas"""
 
-def simplificationExpresionLit2() -> str:
+def simplificationExpresionLit1() -> str:
     return"""     
 Simplificación de la expresion a través de leyes booleanas:
+      
       
 F = {[((AB)+B)((AC)')'+((AB)+B)'(AC)']+D'}'  →     Expresión
 F = {[((AB)+B)(AC)+((AB)+B)'(AC)']+D'}'      →     Doble negación
@@ -120,4 +121,46 @@ F = {[ABC+A'B'+B'C']+D'}'                    →     Distributiva
 F = (ABC+A'B'+B'C'+D')'                      →     Asociativa
 F = (ABC+A'B'+B'C'+D')'                      →     Expresión simplificada 
 """
+
+def originalExpresionLit3() -> str:
+    return "R = [ A -> (B <-> C) ] xor (B ^ D)"
+
+def transformGraficExpresionLit3() -> str:
+    return "R = [ A' + (B xor C)'] xor (B x D)"
+
+def transformExpresionLit3() -> str:
+    return """
+    Reescritura de la expresion con operadores logicos a expresion con operaciones booleanas
+
+R = [ A -> (B <-> C) ] xor (B ^ D)     →     Expresión original  con operadores logicos especiales
+R = [ A -> (B <-> C) ] xor (B x D)     →     Reemplazar (^) por el termino (multiplicación)
+R = [ A -> (BC+B'C') ] xor (  BD )     →     Expandir y reemplazar el termino (<->)
+R = [(A'+ BC + B'C') ] xor (  BD )     →     Expandir y reemplazar el termino ( ->)
+R = (A'+BC+B'C')(BD)'+(A'+BC+B'C')'BD  →     Expandir y reemplazar el termino (XOR)
+R = (A'+BC+B'C')(BD)'+(A'+BC+B'C')'BD  →     Expresión reescrita con operaciones booleanas basicas  
+      """
+      
+def simplificationExpresionLit3() -> str:
+    return """
+      Simplificación de la expresion a través de leyes booleanas:
+      
+R = (A'+BC+B'C')(BD)'+(A'+BC+B'C')'BD                     →    Expresión
+R = (A'+BC+B'C')(B'+D')+(A'+BC+B'C')'BD                   →    De Morgan
+R = (A'+BC+B'C')B'+(A'+BC+B'C')D'+(A'+BC+B'C')'BD         →    Distributiva
+R = A'B'+BCB'+B'C'B'+A'D'+BCD'+B'C'D'+(A'+BC+B'C')'BD     →    Distributiva
+R = A'B'+0+B'C'+A'D'+BCD'+B'C'D'+(A'+BC+B'C')'BD          →    Inversos: (BB'=0)
+R = A'B'+B'C'+A'D'+BCD'+B'C'D'+(A'+BC+B'C')'BD            →    Identidades
+R = A'B'+B'C'+A'D'+BCD'+(A'+BC+B'C')'BD                   →    Absorción:(B'C'+B'C'D'=B'C')
+R = A'B'+B'C'+A'D'+BCD'+(A')'(BC)'(B'C')'BD               →    De Morgan
+R = A'B'+B'C'+A'D'+BCD'+A(B'+C')(B+C)BD                   →    De Morgan
+R = A'B'+B'C'+A'D'+BCD'+AB(B'+C')(B+C)D                   →    Conmutativa
+R = A'B'+B'C'+A'D'+BCD'+A(BB'+BC')(B+C)D                  →    Distributiva
+R = A'B'+B'C'+A'D'+BCD'+A(0+BC')(B+C)D                    →    Inversos
+R = A'B'+B'C'+A'D'+BCD'+ABC'(B+C)D                        →    Identidades
+R = A'B'+B'C'+A'D'+BCD'+(ABC'B+ABC'C)D                    →    Distributiva
+R = A'B'+B'C'+A'D'+BCD'+(ABC'+0)D                         →    Inversos: (CC'=0)
+R = A'B'+B'C'+A'D'+BCD'+ABC'D                             →    Identidades
+R = A'B'+B'C'+A'D'+BCD'+ABC'D                             →    Expresión simplificada
+      
+      """
 
