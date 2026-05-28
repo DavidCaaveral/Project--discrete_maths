@@ -16,6 +16,10 @@ from librerias.circuitos import *
 # 5. Bloque principal de ejecución
 def main():
     
+    print(f"{Fore.LIGHTYELLOW_EX}{'='*60}{Style.RESET_ALL}")
+    print(f"{Fore.LIGHTGREEN_EX}LOGICRAFT{Style.RESET_ALL}".center(70))
+    print(f"{Fore.LIGHTYELLOW_EX}{'='*60}{Style.RESET_ALL}")
+
     while True:
     
         electedOption = mainMenu()["menu"]
@@ -90,58 +94,58 @@ def main():
                         case "AND":
                             localAnd = andLogicGate(valueAS1,valueBS1)
                             showActualGate(submenuOption1)
-                            print(f">OPERACIÓN:")
+                            print(f"{Style.BRIGHT}►OPERACIÓN:{Style.RESET_ALL}")
                             showgates(varAS1,varBS1,localAnd,submenuOption1)
-                            print(f">DIAGRAMA:")
+                            print(f"{Style.BRIGHT}►DIAGRAMA:{Style.RESET_ALL}")
                             print(andLogicGateDiagram(valueAS1,valueBS1,varAS1,varBS1))
                         case "OR":
                             localOr = orLogicGate(valueAS1,valueBS1)
                             showActualGate(submenuOption1)
-                            print(f">OPERACIÓN:")
+                            print(f"{Style.BRIGHT}►OPERACIÓN:{Style.RESET_ALL}")
                             showgates(varAS1,varBS1,localOr,submenuOption1)
-                            print(f">DIAGRAMA:")
+                            print(f"{Style.BRIGHT}►DIAGRAMA:{Style.RESET_ALL}")
                             print(orLogicGateDiagram(valueAS1,valueBS1,varAS1,varBS1))  
                         case "NOT":
                             localNot = notLogicGate(valueAS1)
                             showActualGate(submenuOption1)
-                            print(f">OPERACIÓN:")
+                            print(f"{Style.BRIGHT}►OPERACIÓN:{Style.RESET_ALL}")
                             print(f"{submenuOption1} {varAS1} → {localNot}".center(60))
-                            print(f">DIAGRAMA:")
+                            print(f"{Style.BRIGHT}►DIAGRAMA:{Style.RESET_ALL}")
                             print(notLogicGateDiagram(valueAS1,varAS1))  
                         case "XOR":
                             localXor = xorLogicGate(valueAS1,valueBS1)
                             showActualGate(submenuOption1)
-                            print(f">OPERACIÓN:")
+                            print(f"{Style.BRIGHT}►OPERACIÓN:{Style.RESET_ALL}")
                             showgates(varAS1,varBS1,localXor,submenuOption1)
-                            print(f">DIAGRAMA:")
+                            print(f"{Style.BRIGHT}►DIAGRAMA:{Style.RESET_ALL}")
                             print(xorLogicGateDiagram(valueAS1,valueBS1,varAS1,varBS1))     
                         case "NAND":
                             localNAnd = nAndLogicGate(valueAS1,valueBS1)
                             showActualGate(submenuOption1)
-                            print(f">OPERACIÓN:")
+                            print(f"{Style.BRIGHT}►OPERACIÓN:{Style.RESET_ALL}")
                             showgates(varAS1,varBS1,localNAnd,submenuOption1)
-                            print(f">DIAGRAMA:")
+                            print(f"{Style.BRIGHT}►DIAGRAMA:{Style.RESET_ALL}")
                             print(nAndLogicGateDiagram(valueAS1,valueBS1,varAS1,varBS1))  
                         case "NOR":
                             localNOr = nOrLogicGate(valueAS1,valueBS1)
                             showActualGate(submenuOption1)
-                            print(f">OPERACIÓN:")
+                            print(f"{Style.BRIGHT}►OPERACIÓN:{Style.RESET_ALL}")
                             showgates(varAS1,varBS1,localNOr,submenuOption1)
-                            print(f">DIAGRAMA:")
+                            print(f"{Style.BRIGHT}►DIAGRAMA:{Style.RESET_ALL}")
                             print(nOrLogicGateDiagram(valueAS1,valueBS1,varAS1,varBS1))  
                         case "XNOR":
                             localXNOr = xNorLogicGate(valueAS1,valueBS1)
                             showActualGate(submenuOption1)
-                            print(f">OPERACIÓN:")
+                            print(f"{Style.BRIGHT}►OPERACIÓN:{Style.RESET_ALL}")
                             showgates(varAS1,varBS1,localXNOr,submenuOption1)
-                            print(f">DIAGRAMA:")
+                            print(f"{Style.BRIGHT}►DIAGRAMA:{Style.RESET_ALL}")
                             print(xNorLogicGateDiagram(valueAS1,valueBS1,varAS1,varBS1))    
                         case "IF":
                             localIf = ifLogicGate(valueAS1)
                             showActualGate(submenuOption1)
-                            print(f">OPERACIÓN:")
+                            print(f"{Style.BRIGHT}►OPERACIÓN:{Style.RESET_ALL}")
                             print(f"{submenuOption1} {varAS1} → {localIf}".center(60))
-                            print(f">DIAGRAMA:")
+                            print(f"{Style.BRIGHT}►DIAGRAMA:{Style.RESET_ALL}")
                             print(ifLogicGateDiagram(valueAS1,varAS1))      
            
             case "submenu2":
@@ -170,7 +174,7 @@ def main():
                             inquirer.List(
                                 "varS2",
                                 message=f"Ingrese las variables que desee utilizar {"=="*5} {showActualVar()}",
-                                choices=['A','B','C','D']
+                                choices=[f"{Style.BRIGHT}A{Style.RESET_ALL}", f"{Style.BRIGHT}B{Style.RESET_ALL}", f"{Style.BRIGHT}C{Style.RESET_ALL}", f"{Style.BRIGHT}D{Style.RESET_ALL}"]
                             )
                         ]
                         answerVarS2 = inquirer.prompt(questionVarS2)
@@ -188,26 +192,26 @@ def main():
                     match submenuOptionS2:
                         case "LITERAL1":
                             print("="*60)
-                            print("> Punto 1 <".center(60))
+                            print("► Punto 1 <".center(60))
                             print("="*60,"\n ")
-                            print(f">DIAGRAMA:\n") 
+                            print(f"►DIAGRAMA:\n") 
                             print(firstCircuitDiagram(valueAS2,valueBS2,valueCS2,valueDS2,varAS2,varBS2,varCS2,varDS2)) 
                         case "LITERAL2":
                             print("="*60)
-                            print("> Punto 2 <".center(60))
+                            print("► Punto 2 <".center(60))
                             print("="*60,"\n ")
-                            print(f">DIAGRAMA:\n") 
+                            print(f"►DIAGRAMA:\n") 
                             print(secondCircuitDiagram(valueAS2,valueBS2,valueCS2,varAS2,varBS2,varCS2)) 
                         case "LITERAL3":
                             print("="*60)
-                            print("> Punto 3 <".center(60))
+                            print("► Punto 3 <".center(60))
                             print("="*60,"\n ")
-                            print(f">DIAGRAMA:\n") 
+                            print(f"►DIAGRAMA:\n") 
                             print(thirdCircuitDiagram(valueAS2,valueBS2,valueCS2,valueDS2,varAS2,varBS2,varCS2,varDS2)) 
 
-    print("="*60)
-    print("HASTA PRONTO".center(60))
-    print("="*60)
+    print(f"{Fore.YELLOW}={Style.RESET_ALL}"*60)
+    print(f"{Style.BRIGHT}HASTA PRONTO{Style.RESET_ALL}".center(65))
+    print(f"{Fore.YELLOW}={Style.RESET_ALL}"*60)
 # 6. Punto de entrada
 if __name__ == "__main__":
     main()

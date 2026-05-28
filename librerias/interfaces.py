@@ -10,9 +10,9 @@ from librerias.util import *
 init()
 
 def showActualGate(answerS1) -> None:
-    print("="*60)
-    print(f"Compuerta {answerS1}".center(60))
-    print("="*60,"\n ")
+    print(f"{Fore.LIGHTYELLOW_EX}={Style.RESET_ALL}"*60)
+    print(f"{Style.BRIGHT}Compuerta {answerS1}{Style.RESET_ALL}".center(60))
+    print(f"{Fore.LIGHTYELLOW_EX}={Style.RESET_ALL}"*60,"\n ")
 
 def showActualVar() -> str:
     booleanVarMessage = f"> Variables booleanas: A:{statementObj['A']}, B:{statementObj['B']}, C:{statementObj['C']}, D:{statementObj['D']}"
@@ -29,11 +29,11 @@ def mainMenu() -> dict:
             "menu",
             message="Seleccione una opción",
             choices=[
-                ("Ingresar variables booleanas (A, B, C, D)", "var-bool"),
-                ("Ir al Submenú 1 (Lector de Compuertas)", "submenu1"),
-                ("Ir al Submenú 2 (Circuitos Lógicos)", "submenu2"),
-                ("Limpiar pantalla", "LIMPIAR"),
-                ("Salir", "SALIR")
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Ingresar variables booleanas {Style.BRIGHT}(A, B, C, D){Style.RESET_ALL}", "var-bool"), 
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Ir al Submenú 1 {Style.BRIGHT}(Lector de Compuertas){Style.RESET_ALL}", "submenu1"),
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Ir al Submenú 2 {Style.BRIGHT}(Circuitos Lógicos){Style.RESET_ALL}", "submenu2"),
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}{Fore.GREEN}Limpiar pantalla{Style.RESET_ALL}", "LIMPIAR"),
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}{Fore.RED}Salir{Style.RESET_ALL}", "SALIR")
             ]
         )
     ]
@@ -47,16 +47,16 @@ def subMenu1(objVar) -> dict:
             message= f"Seleccione una opción",
 
             choices=[
-                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Compuerta {Fore.MAGENTA}AND{Style.RESET_ALL}", "AND"),
-                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Compuerta {Fore.MAGENTA}OR{Style.RESET_ALL}", "OR"),
-                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Compuerta {Fore.MAGENTA}NOT{Style.RESET_ALL}", "NOT"),
-                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Compuerta {Fore.MAGENTA}XOR{Style.RESET_ALL}", "XOR"),
-                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Compuerta {Fore.MAGENTA}NAND{Style.RESET_ALL}", "NAND"),
-                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Compuerta {Fore.MAGENTA}NOR{Style.RESET_ALL}", "NOR"),
-                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Compuerta {Fore.MAGENTA}XNOR{Style.RESET_ALL}", "XNOR"),
-                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Compuerta {Fore.MAGENTA}IF{Style.RESET_ALL}", "IF"),
-                (f"{Fore.RED}► VOLVER AL MENÚ PRINCIPAL{Style.RESET_ALL}", "SALIR"),
-                (f"{Fore.GREEN}► LIMPIAR TERMINAL{Style.RESET_ALL}", "LIMPIAR")
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Compuerta {Style.BRIGHT}AND{Style.RESET_ALL}", "AND"),
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Compuerta {Style.BRIGHT}OR{Style.RESET_ALL}", "OR"),
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Compuerta {Style.BRIGHT}NOT{Style.RESET_ALL}", "NOT"),
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Compuerta {Style.BRIGHT}XOR{Style.RESET_ALL}", "XOR"),
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Compuerta {Style.BRIGHT}NAND{Style.RESET_ALL}", "NAND"),
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Compuerta {Style.BRIGHT}NOR{Style.RESET_ALL}", "NOR"),
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Compuerta {Style.BRIGHT}XNOR{Style.RESET_ALL}", "XNOR"),
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Compuerta {Style.BRIGHT}IF{Style.RESET_ALL}", "IF"),
+                (f"{Fore.RED}► Volver al menú principal{Style.RESET_ALL}", "SALIR"),
+                (f"{Fore.GREEN}► Limpiar pantalla{Style.RESET_ALL}", "LIMPIAR")
                 ]
             )
     ]
@@ -69,11 +69,11 @@ def subMenu2(objVar) -> dict:
             "submenu2",
             message= f"Seleccione una opción",
             choices=[
-                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}{Fore.MAGENTA}Gráfica #1{Style.RESET_ALL}", "LITERAL1"),
-                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}{Fore.MAGENTA}Gráfica #2{Style.RESET_ALL}", "LITERAL2"),
-                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}{Fore.MAGENTA}Gráfica #3{Style.RESET_ALL}", "LITERAL3"),
-                (f"{Fore.RED}► VOLVER AL MENÚ PRINCIPAL{Style.RESET_ALL}", "SALIR"),
-                (f"{Fore.GREEN}► LIMPIAR TERMINAL{Style.RESET_ALL}", "LIMPIAR")
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}{Style.BRIGHT}Gráfica #1{Style.RESET_ALL}", "LITERAL1"),
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}{Style.BRIGHT}Gráfica #2{Style.RESET_ALL}", "LITERAL2"),
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}{Style.BRIGHT}Gráfica #3{Style.RESET_ALL}", "LITERAL3"),
+                (f"{Fore.RED}► Volver al menú principal{Style.RESET_ALL}", "SALIR"),
+                (f"{Fore.GREEN}► Limpiar pantalla{Style.RESET_ALL}", "LIMPIAR")
             ]
         )
     ]
