@@ -1,3 +1,4 @@
+# DEFINICION DE MENUS
 import re
 import os
 import sys
@@ -8,18 +9,18 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from librerias.util import *
 
 init()
-
+# muestra la compuerta que se esta usando
 def showActualGate(answerS1) -> None:
     print(f"{Fore.LIGHTYELLOW_EX}={Style.RESET_ALL}"*60)
     print(f"{Style.BRIGHT}{Fore.CYAN}Compuerta {answerS1}{Style.RESET_ALL}{Style.RESET_ALL}".center(60))
     print(f"{Fore.LIGHTYELLOW_EX}={Style.RESET_ALL}"*60,"\n ")
-
+# muestra las variables en su estado actual
 def showActualVar() -> str:
     booleanVarMessage = f"> Variables booleanas: A:{statementObj['A']}, B:{statementObj['B']}, C:{statementObj['C']}, D:{statementObj['D']}"
     if statementObj['A'] == -1:
         booleanVarMessage = f"> Variables booleanas: A:{None}, B:{None}, C:{None}, D:{None}" 
     return f"{Back.GREEN}{booleanVarMessage}{Style.RESET_ALL}"
-
+# MENU PRINCIPAL
 def mainMenu() -> dict:
     print(" "*60, showActualVar())
     print("\nA continuación podrá ver las diferentes opciones\nque tiene para interactuar con el proyecto\n ")
@@ -38,7 +39,7 @@ def mainMenu() -> dict:
         )
     ]
     return inquirer.prompt(optionsMenu)
-
+# SUB MENU DE COMPUERTAS LOGICAS
 def subMenu1(objVar) -> dict:
     print(" "*60, showActualVar())
     optionsSubMenu = [
@@ -61,7 +62,7 @@ def subMenu1(objVar) -> dict:
             )
     ]
     return inquirer.prompt(optionsSubMenu) 
-    
+# SUBMENU DE CIRCUITOS   
 def subMenu2(objVar) -> dict:
     print(" "*30, showActualVar())
     optionsSubMenu2 = [
