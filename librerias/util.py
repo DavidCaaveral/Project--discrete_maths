@@ -19,6 +19,7 @@ def booleanValidation(objVar) -> any:
             print("ERROR VARIABLES BOOLEANAS NO ASIGNADAS".center(60))
             print("="*60)
             time.sleep (2)
+            clearTerm()
             return False
     return True    
 # Función que limpia la terminal
