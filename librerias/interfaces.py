@@ -11,7 +11,7 @@ init()
 
 def showActualGate(answerS1) -> None:
     print(f"{Fore.LIGHTYELLOW_EX}={Style.RESET_ALL}"*60)
-    print(f"{Style.BRIGHT}Compuerta {answerS1}{Style.RESET_ALL}".center(60))
+    print(f"{Style.BRIGHT}{Fore.CYAN}Compuerta {answerS1}{Style.RESET_ALL}{Style.RESET_ALL}".center(60))
     print(f"{Fore.LIGHTYELLOW_EX}={Style.RESET_ALL}"*60,"\n ")
 
 def showActualVar() -> str:
