@@ -21,6 +21,7 @@ def main():
     print(f"{Fore.LIGHTYELLOW_EX}{'='*60}{Style.RESET_ALL}")
 
     while True:
+    
         electedOption = mainMenu()["menu"]
         
         if electedOption == "SALIR":
