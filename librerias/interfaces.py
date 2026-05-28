@@ -11,7 +11,7 @@ init()
 
 def showActualGate(answerS1) -> None:
     print(f"{Fore.LIGHTYELLOW_EX}={Style.RESET_ALL}"*60)
-    print(f"{Style.BRIGHT}Compuerta {answerS1}{Style.RESET_ALL}".center(60))
+    print(f"{Style.BRIGHT}{Fore.CYAN}Compuerta {answerS1}{Style.RESET_ALL}{Style.RESET_ALL}".center(60))
     print(f"{Fore.LIGHTYELLOW_EX}={Style.RESET_ALL}"*60,"\n ")
 
 def showActualVar() -> str:
@@ -30,8 +30,8 @@ def mainMenu() -> dict:
             message="Seleccione una opción",
             choices=[
                 (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Ingresar variables booleanas {Style.BRIGHT}(A, B, C, D){Style.RESET_ALL}", "var-bool"), 
-                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Ir al Submenú 1 {Style.BRIGHT}(Lector de Compuertas){Style.RESET_ALL}", "submenu1"),
-                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}Ir al Submenú 2 {Style.BRIGHT}(Circuitos Lógicos){Style.RESET_ALL}", "submenu2"),
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}{Style.BRIGHT}Lector de Compuertas{Style.RESET_ALL}", "submenu1"),
+                (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}{Style.BRIGHT}Circuitos Lógicos{Style.RESET_ALL}", "submenu2"),
                 (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}{Fore.GREEN}Limpiar pantalla{Style.RESET_ALL}", "LIMPIAR"),
                 (f"{Fore.LIGHTYELLOW_EX}► {Style.RESET_ALL}{Fore.RED}Salir{Style.RESET_ALL}", "SALIR")
             ]

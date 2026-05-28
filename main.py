@@ -22,21 +22,26 @@ def main():
 
     while True:
     
-        electedOption = mainMenu()["menu"]
+        electedOption = mainMenu()["menu"] # llamada al diccioanrio que retorna el la funcion mainMenu que usa inquirer
         
+        # función para salir
         if electedOption == "SALIR":
                     break
-
+        # función para limpiar la terminal 
         if electedOption == "LIMPIAR":
                     clearTerm()
                     continue
-                
+        
+        # switch utilizado       
         match electedOption:
-            
+            # en caso de elegir el ingreso de las variables booleanas
             case "var-bool":
                 print(f"="*66+'\n')
                 print(f"\n{"="*8}> {Fore.CYAN} Ingreso de variables booleanas {Style.RESET_ALL} <{"="*8} \n")
+                
+                #itera sobre el diccionario de variables para llenar todas sus keys
                 for key in statementObj:
+                    # uso de inquirer para menu de 0 o 1
                     questionBool = [
                         inquirer.List(
                             "value",
@@ -53,7 +58,7 @@ def main():
                 print(f"\nVariables asignadas con exito {" - -"*5} A:{statementObj['A']}, B:{statementObj['B']}, C:{statementObj['C']}, D:{statementObj['D']}\n \n")
                 print("Redirigiendo...".center(76), "\n")
                 time.sleep(2)
-                
+            # en caso de elegir el lector de compuertas    
             case "submenu1":
                 
                 if not booleanValidation(statementObj):
@@ -154,7 +159,7 @@ def main():
                     continue
                 
                 print(f"="*66+'\n')
-                print(f"\n{"="*21}> {Fore.CYAN} Circuitos Logicos {Style.RESET_ALL} <{"="*21} \n \n")
+                print(f"\n{"="*21}> {Fore.CYAN} Circuitos Logicos {Style.RESET_ALL} <{"="*22} \n \n")
                 
                 Flag = True
                 while Flag:
@@ -195,8 +200,9 @@ def main():
                     match submenuOptionS2:
                         case "LITERAL1":
                             print("="*60)
-                            print("► Punto 1 <".center(60))
+                            print(F"{Fore.CYAN}► Punto 1 <{Style.RESET_ALL}".center(60))
                             print("="*60,"\n ")
+<<<<<<< HEAD
                             time.sleep(2)
                             print(f"► EXPRESIÓN:\n")
                             print(originalExpresionLit1())
@@ -208,11 +214,24 @@ def main():
                             print(tramsformationExpresionLit1())
                             time.sleep(2)
                             print(f"\n► SIMPLIFICACIÓN:\n")
+=======
+                            print(f"{Fore.CYAN}► EXPRESIÓN:\n{Style.RESET_ALL}")
+                            print(originalExpresionLit1())
+                            print("="*60, "\n")
+                            print(f"{Fore.CYAN}\n► DIAGRAMA:\n{Style.RESET_ALL}") 
+                            print(firstCircuitDiagram(valueAS2,valueBS2,valueCS2,valueDS2,varAS2,varBS2,varCS2,varDS2)) 
+                            print("="*60, "\n")
+                            print(f"{Fore.CYAN}\n► TRANSFORMACIÓN:\n{Style.RESET_ALL}")
+                            print(tramsformationExpresionLit1())
+                            print("="*60, "\n")
+                            print(f"{Fore.CYAN}\n► SIMPLIFICACIÓN:\n{Style.RESET_ALL}")
+>>>>>>> 9730e3a6ca830e18c69662ac978be1845d0207fe
                             print(simplificationExpresionLit1())
                         case "LITERAL2":
                             print("="*60)
-                            print("► Punto 2 <".center(60))
+                            print(F"{Fore.CYAN}► Punto 2 <{Style.RESET_ALL}".center(60))
                             print("="*60,"\n ")
+<<<<<<< HEAD
                             time.sleep(2)
                             print(f"► EXPRESIÓN:\n")
                             print(originalExpresionLit2())
@@ -221,12 +240,22 @@ def main():
                             print(secondCircuitDiagram(valueAS2,valueBS2,valueCS2,varAS2,varBS2,varCS2)) 
                             time.sleep(2)
                             print(f"\n► SIMPLIFICACIÓN:\n")
+=======
+                            print(f"{Fore.CYAN}► EXPRESIÓN:\n{Style.RESET_ALL}")
+                            print(originalExpresionLit2())
+                            print("="*60, "\n")
+                            print(f"{Fore.CYAN}\n► DIAGRAMA:\n{Style.RESET_ALL}") 
+                            print(secondCircuitDiagram(valueAS2,valueBS2,valueCS2,varAS2,varBS2,varCS2)) 
+                            print("="*60, "\n")
+                            print(f"{Fore.CYAN}\n► SIMPLIFICACIÓN:\n{Style.RESET_ALL}")
+>>>>>>> 9730e3a6ca830e18c69662ac978be1845d0207fe
                             print(simplificationExpresionLit2())
                             
                         case "LITERAL3":
                             print("="*60)
-                            print("► Punto 3 <".center(60))
+                            print(F"{Fore.CYAN}► Punto 3 <{Style.RESET_ALL}".center(60))
                             print("="*60,"\n ")
+<<<<<<< HEAD
                             time.sleep(2)
                             print(f"► EXPRESIÓN:\n")
                             print(originalExpresionLit3())
@@ -241,6 +270,21 @@ def main():
                             print(transformExpresionLit3())
                             time.sleep(2)
                             print(f"\n► SIMPLIFICACIÓN:\n")
+=======
+                            print(f"{Fore.CYAN}► EXPRESIÓN:\n{Style.RESET_ALL}")
+                            print(originalExpresionLit3())
+                            print("="*60, "\n")
+                            print(f"{Fore.CYAN}\n► EXPRESIÓN ORIGINAL TRANSFORMADA:\n{Style.RESET_ALL}")
+                            print(transformGraficExpresionLit3())
+                            print("="*60, "\n")
+                            print(f"{Fore.CYAN}\n► DIAGRAMA:\n{Style.RESET_ALL}") 
+                            print(thirdCircuitDiagram(valueAS2,valueBS2,valueCS2,valueDS2,varAS2,varBS2,varCS2,varDS2)) 
+                            print("="*60, "\n")
+                            print(f"{Fore.CYAN}\n► TRANSFORMACIÓN:\n{Style.RESET_ALL}")
+                            print(transformExpresionLit3())
+                            print("="*60, "\n")
+                            print(f"{Fore.CYAN}\n► SIMPLIFICACIÓN:\n{Style.RESET_ALL}")
+>>>>>>> 9730e3a6ca830e18c69662ac978be1845d0207fe
                             print(simplificationExpresionLit3())
     time.sleep(2)
     print(f"{Fore.YELLOW}={Style.RESET_ALL}"*60)
