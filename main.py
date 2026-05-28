@@ -174,7 +174,10 @@ def main():
                             inquirer.List(
                                 "varS2",
                                 message=f"Ingrese las variables que desee utilizar {"=="*5} {showActualVar()}",
-                                choices=[f"{Style.BRIGHT}A{Style.RESET_ALL}", f"{Style.BRIGHT}B{Style.RESET_ALL}", f"{Style.BRIGHT}C{Style.RESET_ALL}", f"{Style.BRIGHT}D{Style.RESET_ALL}"]
+                                choices=['A', 
+                                         'B', 
+                                         'C', 
+                                         'D']
                             )
                         ]
                         answerVarS2 = inquirer.prompt(questionVarS2)
