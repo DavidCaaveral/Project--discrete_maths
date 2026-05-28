@@ -59,7 +59,7 @@ def thirdCircuitDiagram(a,b,c,d,keyA,keyB,keyC,keyD) -> str:
     firstLocalXnor = xNorLogicGate(b,c)
     unicLocalAnd = andLogicGate(b,d)
     unicLocalOr = orLogicGate(notA,firstLocalXnor)
-    secondLocalXnor = xNorLogicGate(unicLocalOr,unicLocalAnd)
+    secondLocalXor = xorLogicGate(unicLocalOr,unicLocalAnd)
     
     return f"""
                              
@@ -72,7 +72,7 @@ def thirdCircuitDiagram(a,b,c,d,keyA,keyB,keyC,keyD) -> str:
                    _____         |     /_____/        |
 {keyB}: {b} ------+-----\\\\     \\        |                    |        _____   
            |      ))XNOR )o-------                    |      \\\\     \\
-{keyC}: {c} ------)-----//_____/                             --------))XNOR )------- R: {secondLocalXnor}
+{keyC}: {c} ------)-----//_____/                             --------))XOR )------- R: {secondLocalXor}
            |                                          |      //_____/    
            |       ______                             |
            -------|      \\                            |
@@ -80,5 +80,44 @@ def thirdCircuitDiagram(a,b,c,d,keyA,keyB,keyC,keyD) -> str:
 {keyD}: {d} -------------|______/
 
 
+"""
+
+def originalExpresionLit1() -> str:
+   return "Z = [(A x B) + (A x C)]"
+
+def simplificationExpresionLit1() -> str: 
+    return """
+Simplificación de la expresion a través de leyes booleanas:
+      
+Z = [(A x B) + (A x C)])     → Expresion original
+Z =   A x (B x C)            → Distributiva inversa / Factor común
+Z =   A x (B x C)            → Expresión simplificada
+"""
+
+def originalExpresionLit2() -> str:
+    return " F = {[((A x B) + B) xor (A x C)'] + D'}' "
+
+def tramsformationExpresionLit2() -> str:
+    return """
+Reescritura de la expresion con operadores logicos a expresion con operaciones booleanas
+
+F = {[((A x B) + B) xor (A x C)'] + D'}'     →     Expresión original  con operadores logicos especiales
+F = {[((AB)+B)((AC)')'+((AB)+B)'(AC)']+D'}'  →     Expandir termino xor
+F = {[((AB)+B)((AC)')'+((AB)+B)'(AC)']+D'}'  →     Expresión reescrita con operaciones booleanas basicas"""
+
+def simplificationExpresionLit2() -> str:
+    return"""     
+Simplificación de la expresion a través de leyes booleanas:
+      
+F = {[((AB)+B)((AC)')'+((AB)+B)'(AC)']+D'}'  →     Expresión
+F = {[((AB)+B)(AC)+((AB)+B)'(AC)']+D'}'      →     Doble negación
+F = {[(B)(AC)+((AB)+B)'(AC)']+D'}'           →     Absorción del tipo (AB+B=B)
+F = {[ABC+((AB)+B)'(AC)']+D'}'               →     Asociativa
+F = {[ABC+(B)'(AC)']+D'}'                    →     Absorción del tipo (AB+B=B)
+F = {[ABC+B'(AC)']+D'}'                      →     Asociativa
+F = {[ABC+B'(A'+C')]+D'}'                    →     De Morgan
+F = {[ABC+A'B'+B'C']+D'}'                    →     Distributiva 
+F = (ABC+A'B'+B'C'+D')'                      →     Asociativa
+F = (ABC+A'B'+B'C'+D')'                      →     Expresión simplificada 
 """
 
