@@ -13,10 +13,12 @@ statementObj = { # Inicialización de keys de objeto
 def booleanValidation(objVar) -> any:
     for key in objVar:
         if objVar[key] != 0 and objVar[key] != 1:
-            time.sleep (2)
+            time.sleep (1)
+            clearTerm()
             print("="*60)
             print("ERROR VARIABLES BOOLEANAS NO ASIGNADAS".center(60))
             print("="*60)
+            time.sleep (2)
             return False
     return True    
 # Función que limpia la terminal

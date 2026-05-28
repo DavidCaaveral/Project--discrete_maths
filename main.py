@@ -274,9 +274,11 @@ def main():
                             print(f"{Fore.CYAN}\n► SIMPLIFICACIÓN:\n{Style.RESET_ALL}")
                             print(simplificationExpresionLit3())
 
+    time.sleep(1)
     print(f"{Fore.YELLOW}={Style.RESET_ALL}"*60)
     print(f"{Style.BRIGHT}HASTA PRONTO{Style.RESET_ALL}".center(65))
     print(f"{Fore.YELLOW}={Style.RESET_ALL}"*60)
+    time.sleep(3)
 # 3. Punto de entrada
 if __name__ == "__main__":
     main()
