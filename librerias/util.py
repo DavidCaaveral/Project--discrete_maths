@@ -1,4 +1,5 @@
 import os
+import time
 
 statementObj = { # Inicialización de keys de objeto
     'A': -1,
@@ -10,6 +11,7 @@ statementObj = { # Inicialización de keys de objeto
 def booleanValidation(objVar) -> any:
     for key in objVar:
         if objVar[key] != 0 and objVar[key] != 1:
+            time.sleep (2)
             print("="*60)
             print("ERROR VARIABLES BOOLEANAS NO ASIGNADAS".center(60))
             print("="*60)
