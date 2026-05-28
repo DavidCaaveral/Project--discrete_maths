@@ -1,6 +1,7 @@
 print("___________________________________________________________________________________________________________")
 print("\nFigura 2\n")
 
+# Expresión original
 print("Z = [(A x B) + (A x C)]")
 
 print("""
@@ -16,6 +17,8 @@ B ----)------------|______/                |       _____
                    | AND   )---------------|
 C -----------------|______/
 """)
+
+# simplificación
 print("""
 Simplificación de la expresion a través de leyes booleanas:
       
@@ -29,6 +32,7 @@ Z =   A x (B x C)            → Expresión simplificada
 
 print("___________________________________________________________________________________________________________")
 print("\nFigura 1\n")
+# Expresión original
 print("F = {[((A x B) + B) xor (A x C)'] + D'}'")
 
 
@@ -53,12 +57,18 @@ C ------------|NOT>o------------------------------------------------------------
               |  / 
               |/   
 
-Reescritura de la expresion con operadores logicos a expresion con operaciones booleanas
+
+""")
+# transformacion
+print("""
+     Reescritura de la expresion con operadores logicos a expresion con operaciones booleanas
 
 F = {[((A x B) + B) xor (A x C)'] + D'}'     →     Expresión original  con operadores logicos especiales
 F = {[((AB)+B)((AC)')'+((AB)+B)'(AC)']+D'}'  →     Expandir termino xor
-F = {[((AB)+B)((AC)')'+((AB)+B)'(AC)']+D'}'  →     Expresión reescrita con operaciones booleanas basicas
-      
+F = {[((AB)+B)((AC)')'+((AB)+B)'(AC)']+D'}'  →     Expresión reescrita con operaciones booleanas basicas""")
+ 
+# simplificacion 
+print("""     
 Simplificación de la expresion a través de leyes booleanas:
       
 F = {[((AB)+B)((AC)')'+((AB)+B)'(AC)']+D'}'  →     Expresión
@@ -70,13 +80,15 @@ F = {[ABC+B'(AC)']+D'}'                      →     Asociativa
 F = {[ABC+B'(A'+C')]+D'}'                    →     De Morgan
 F = {[ABC+A'B'+B'C']+D'}'                    →     Distributiva 
 F = (ABC+A'B'+B'C'+D')'                      →     Asociativa
-F = (ABC+A'B'+B'C'+D')'                      →     Expresión simplificada
-""")
+F = (ABC+A'B'+B'C'+D')'                      →     Expresión simplificada 
+      """)
 
 print("___________________________________________________________________________________________________________")
 print("\nFigura 3\n")
 
+# Expresión original
 print("R = [ A -> (B <-> C) ] xor (B ^ D)")
+# expresion transformada para grafica
 print("R = [ A' + (B xor C)'] xor (B x D)")
 
 print("""
@@ -97,16 +109,24 @@ C ------)-----//_____/                             --------))XNOR )------- R
                | AND   )----------------------------
 D -------------|______/
 
-Reescritura de la expresion con operadores logicos a expresion con operaciones booleanas
+""")
+
+# Transformacion
+
+print("""
+    Reescritura de la expresion con operadores logicos a expresion con operaciones booleanas
 
 R = [ A -> (B <-> C) ] xor (B ^ D)     →     Expresión original  con operadores logicos especiales
 R = [ A -> (B <-> C) ] xor (B x D)     →     Reemplazar (^) por el termino (multiplicación)
 R = [ A -> (BC+B'C') ] xor (  BD )     →     Expandir y reemplazar el termino (<->)
 R = [(A'+ BC + B'C') ] xor (  BD )     →     Expandir y reemplazar el termino ( ->)
 R = (A'+BC+B'C')(BD)'+(A'+BC+B'C')'BD  →     Expandir y reemplazar el termino (XOR)
-R = (A'+BC+B'C')(BD)'+(A'+BC+B'C')'BD  →     Expresión reescrita con operaciones booleanas basicas
+R = (A'+BC+B'C')(BD)'+(A'+BC+B'C')'BD  →     Expresión reescrita con operaciones booleanas basicas  
+      """)
 
-Simplificación de la expresion a través de leyes booleanas:
+# Simplificación
+print("""
+      Simplificación de la expresion a través de leyes booleanas:
       
 R = (A'+BC+B'C')(BD)'+(A'+BC+B'C')'BD                     →    Expresión
 R = (A'+BC+B'C')(B'+D')+(A'+BC+B'C')'BD                   →    De Morgan
@@ -125,7 +145,6 @@ R = A'B'+B'C'+A'D'+BCD'+(ABC'B+ABC'C)D                    →    Distributiva
 R = A'B'+B'C'+A'D'+BCD'+(ABC'+0)D                         →    Inversos: (CC'=0)
 R = A'B'+B'C'+A'D'+BCD'+ABC'D                             →    Identidades
 R = A'B'+B'C'+A'D'+BCD'+ABC'D                             →    Expresión simplificada
-
-""")
-
+      
+      """)
 

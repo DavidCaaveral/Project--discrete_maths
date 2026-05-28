@@ -17,6 +17,7 @@ from librerias.circuitos import *
 def main():
     
     while True:
+    
         electedOption = mainMenu()["menu"]
         
         if electedOption == "SALIR":

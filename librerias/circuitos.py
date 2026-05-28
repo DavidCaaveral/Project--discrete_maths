@@ -72,7 +72,7 @@ def thirdCircuitDiagram(a,b,c,d,keyA,keyB,keyC,keyD) -> str:
                    _____         |     /_____/        |
 {keyB}: {b} ------+-----\\\\     \\        |                    |        _____   
            |      ))XNOR )o-------                    |      \\\\     \\
-{keyC}: {c} ------)-----//_____/                             --------))XOR )------- R: {secondLocalXor}
+{keyC}: {c} ------)-----//_____/                             --------))XOR  )------- R: {secondLocalXor}
            |                                          |      //_____/    
            |       ______                             |
            -------|      \\                            |
